@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download — SYNTH3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="extra.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SYNTH<span>3D</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="download.html" class="nav-cta active">Download</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="download.html">Download</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero" style="text-align:center;">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1" style="opacity:0.12"></div>
+      <div class="orb orb-2" style="opacity:0.08"></div>
+    </div>
+    <div class="page-hero-content">
+      <p class="section-tag">Early Access · Free</p>
+      <h1>Download <span class="gradient-text">SYNTH3D</span></h1>
+      <p class="hero-sub" style="margin: 0 auto;">Currently in beta. Free for all users. No account required.</p>
+    </div>
+  </section>
+
+  <section style="background: var(--bg); padding-top: 20px;">
+    <div class="download-cards">
+
+      <div class="download-card download-card-featured">
+        <div class="download-icon">🪟</div>
+        <div class="download-os">Windows</div>
+        <div class="download-version">Version 0.8.2 Beta</div>
+        <div class="download-size">148 MB · .exe installer</div>
+        <button class="btn btn-primary" style="width:100%; justify-content:center; margin-top: 8px;" onclick="showComingSoon()">
+          Download for Windows
+        </button>
+        <div class="download-req">Requires Windows 10/11 · Unity 2022.3 LTS+</div>
+      </div>
+
+      <div class="download-card">
+        <div class="download-icon">🍎</div>
+        <div class="download-os">macOS</div>
+        <div class="download-version">Version 0.8.2 Beta</div>
+        <div class="download-size">162 MB · .dmg installer</div>
+        <button class="btn btn-ghost" style="width:100%; justify-content:center; margin-top: 8px;" onclick="showComingSoon()">
+          Download for macOS
+        </button>
+        <div class="download-req">Requires macOS 12+ · Apple Silicon or Intel · Unity 2022.3 LTS+</div>
+      </div>
+
+      <div class="download-card" style="opacity: 0.5;">
+        <div class="download-icon">🐧</div>
+        <div class="download-os">Linux</div>
+        <div class="download-version">Coming soon</div>
+        <div class="download-size">Planned for v1.0</div>
+        <button class="btn btn-ghost" style="width:100%; justify-content:center; margin-top: 8px;" disabled>
+          Not yet available
+        </button>
+        <div class="download-req">Sign up to be notified when Linux support arrives</div>
+      </div>
+
+    </div>
+
+    <!-- Coming soon popup placeholder -->
+    <div id="comingSoon" class="coming-soon-banner" style="display:none;">
+      <div class="coming-soon-inner">
+        <div style="font-size:1.5rem;">🚀</div>
+        <div>
+          <strong>Download links coming soon!</strong>
+          <p style="color:var(--text-2);font-size:0.88rem;margin-top:4px;">This is a template. Add your real download links here when you're ready to ship.</p>
+        </div>
+        <button onclick="document.getElementById('comingSoon').style.display='none'" style="background:none;border:none;color:var(--text-3);cursor:pointer;font-size:1.2rem;">✕</button>
+      </div>
+    </div>
+
+    <!-- System requirements -->
+    <div style="max-width: var(--max-w); margin: 60px auto 0; padding: 0 24px;">
+      <h2 style="font-family: var(--font-display); font-size:1.5rem; margin-bottom:24px; text-align:center;">System requirements</h2>
+      <div class="docs-table-wrap" style="max-width:700px; margin:0 auto;">
+        <table class="docs-table">
+          <thead><tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr></thead>
+          <tbody>
+            <tr><td>OS</td><td>Windows 10 / macOS 12</td><td>Windows 11 / macOS 14</td></tr>
+            <tr><td>RAM</td><td>8 GB</td><td>16 GB+</td></tr>
+            <tr><td>GPU</td><td>4 GB VRAM (DX12)</td><td>8 GB VRAM (RTX / M-series)</td></tr>
+            <tr><td>Storage</td><td>4 GB</td><td>10 GB+</td></tr>
+            <tr><td>Unity</td><td>2022.3 LTS</td><td>2023.2+</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Changelog teaser -->
+    <div style="max-width: 700px; margin: 60px auto 0; padding: 0 24px;">
+      <h2 style="font-family: var(--font-display); font-size:1.3rem; margin-bottom:20px;">Changelog · v0.8.2</h2>
+      <ul class="docs-list docs-list-bullet">
+        <li>Added glTF/glb export format</li>
+        <li>Improved prompt parsing for spatial relationships</li>
+        <li>Fixed lighting artifacts in HDRP scenes</li>
+        <li>Reduced average generation time by 18%</li>
+        <li>macOS Apple Silicon native support</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><a href="index.html" class="nav-logo">SYNTH<span>3D</span></a><p>AI-powered 3D world generation, built on Unity.</p></div>
+      <div class="footer-links">
+        <div class="footer-col"><h4>Product</h4><ul><li><a href="features.html">Features</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="download.html">Download</a></li></ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul><li><a href="docs.html">Documentation</a></li><li><a href="#">Changelog</a></li><li><a href="#">GitHub</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">Twitter / X</a></li><li><a href="#">Discord</a></li><li><a href="#">Contact</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 SYNTH3D. All rights reserved.</p></div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    function showComingSoon() {
+      document.getElementById('comingSoon').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

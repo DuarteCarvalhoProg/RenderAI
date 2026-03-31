@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation — SYNTH3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="extra.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SYNTH<span>3D</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="docs.html" class="active">Docs</a></li>
+        <li><a href="download.html" class="nav-cta">Download</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="download.html">Download</a></li>
+    </ul>
+  </div>
+
+  <div class="docs-layout">
+    <!-- Sidebar -->
+    <aside class="docs-sidebar">
+      <div class="docs-sidebar-inner">
+        <div class="docs-sidebar-section">
+          <p class="docs-sidebar-title">Getting Started</p>
+          <ul>
+            <li><a href="#install" class="docs-nav-link active">Installation</a></li>
+            <li><a href="#quickstart" class="docs-nav-link">Quick start</a></li>
+            <li><a href="#requirements" class="docs-nav-link">System requirements</a></li>
+          </ul>
+        </div>
+        <div class="docs-sidebar-section">
+          <p class="docs-sidebar-title">Prompting</p>
+          <ul>
+            <li><a href="#prompt-basics" class="docs-nav-link">Prompt basics</a></li>
+            <li><a href="#advanced-prompts" class="docs-nav-link">Advanced techniques</a></li>
+            <li><a href="#iteration" class="docs-nav-link">Iterating on scenes</a></li>
+          </ul>
+        </div>
+        <div class="docs-sidebar-section">
+          <p class="docs-sidebar-title">Export</p>
+          <ul>
+            <li><a href="#export-formats" class="docs-nav-link">Export formats</a></li>
+            <li><a href="#unity-pipeline" class="docs-nav-link">Unity pipeline</a></li>
+          </ul>
+        </div>
+        <div class="docs-sidebar-section">
+          <p class="docs-sidebar-title">Reference</p>
+          <ul>
+            <li><a href="#faq" class="docs-nav-link">FAQ</a></li>
+            <li><a href="#changelog" class="docs-nav-link">Changelog</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="docs-main">
+      <div class="docs-content">
+
+        <div class="docs-breadcrumb">Documentation</div>
+
+        <section id="install" class="docs-section">
+          <h1>Getting Started</h1>
+          <p class="docs-lead">Welcome to SYNTH3D. This guide will get you from zero to your first generated 3D world in under 5 minutes.</p>
+
+          <h2>Installation</h2>
+          <p>SYNTH3D is a standalone desktop application. Download the installer for your platform from the <a href="download.html" style="color:var(--accent);">Download page</a> and follow the steps below.</p>
+
+          <div class="docs-callout">
+            <div class="docs-callout-icon">ℹ</div>
+            <div>
+              <strong>Unity is required.</strong> SYNTH3D uses Unity as its rendering engine. Make sure you have Unity 2022.3 LTS or later installed before running SYNTH3D.
+            </div>
+          </div>
+
+          <ol class="docs-list">
+            <li>Download the installer for your OS (Windows / macOS)</li>
+            <li>Run the installer and follow on-screen instructions</li>
+            <li>On first launch, SYNTH3D will detect your Unity installation automatically</li>
+            <li>You're ready to generate your first scene</li>
+          </ol>
+        </section>
+
+        <section id="quickstart" class="docs-section">
+          <h2>Quick start</h2>
+          <p>Once installed, open SYNTH3D and type your first prompt into the input bar at the top of the window.</p>
+          <div class="docs-code-block">
+            <div class="docs-code-header">
+              <span>Example prompt</span>
+              <button class="docs-copy-btn" onclick="this.textContent='Copied!'">Copy</button>
+            </div>
+            <pre><code>"A mossy stone temple in a rainforest, shafts of light through the canopy, butterflies"</code></pre>
+          </div>
+          <p>Press <kbd>Enter</kbd> or click <strong>Generate</strong>. SYNTH3D will process the prompt and render the scene in Unity. Generation typically takes 2–6 seconds depending on scene complexity.</p>
+        </section>
+
+        <section id="requirements" class="docs-section">
+          <h2>System requirements</h2>
+          <div class="docs-table-wrap">
+            <table class="docs-table">
+              <thead>
+                <tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>OS</td><td>Windows 10 / macOS 12</td><td>Windows 11 / macOS 14</td></tr>
+                <tr><td>RAM</td><td>8 GB</td><td>16 GB+</td></tr>
+                <tr><td>GPU</td><td>4 GB VRAM (DX12)</td><td>8 GB VRAM (RTX / M-series)</td></tr>
+                <tr><td>Storage</td><td>4 GB</td><td>10 GB+</td></tr>
+                <tr><td>Unity</td><td>2022.3 LTS</td><td>2023.2+</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="prompt-basics" class="docs-section">
+          <h2>Prompt basics</h2>
+          <p>Good prompts are descriptive and specific. Think of yourself as directing a film — you're setting the scene, the mood, the time of day, and the atmosphere.</p>
+
+          <h3>What to include</h3>
+          <ul class="docs-list docs-list-bullet">
+            <li><strong>Setting</strong> — Where is the scene? (forest, city, space, underwater)</li>
+            <li><strong>Time of day / weather</strong> — dawn, midday, dusk, midnight, rainy, foggy</li>
+            <li><strong>Mood / atmosphere</strong> — eerie, peaceful, dramatic, desolate</li>
+            <li><strong>Key objects</strong> — what should be in the scene? (ruins, trees, a bridge)</li>
+            <li><strong>Lighting</strong> — warm golden light, cool moonlight, harsh noon sun</li>
+          </ul>
+        </section>
+
+        <section id="export-formats" class="docs-section">
+          <h2>Export formats</h2>
+          <p>After generating a scene, click <strong>Export</strong> in the top toolbar to open the export panel.</p>
+          <div class="docs-table-wrap">
+            <table class="docs-table">
+              <thead>
+                <tr><th>Format</th><th>Best for</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>.unitypackage</td><td>Dropping into another Unity project</td></tr>
+                <tr><td>.fbx</td><td>Blender, Maya, 3ds Max, general 3D</td></tr>
+                <tr><td>.glTF / .glb</td><td>Web, Three.js, AR/VR platforms</td></tr>
+                <tr><td>.obj</td><td>Universal compatibility</td></tr>
+                <tr><td>PNG / EXR</td><td>Still renders, compositing</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="faq" class="docs-section">
+          <h2>FAQ</h2>
+          <div class="docs-faq">
+            <details class="faq-item">
+              <summary>Is SYNTH3D free?</summary>
+              <p>The beta is completely free. Future pricing will be announced before public launch.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Do I need coding knowledge?</summary>
+              <p>No. SYNTH3D is a graphical application designed for creators of all backgrounds. You only need to write prompts in plain language.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Can I use generated scenes commercially?</summary>
+              <p>Yes. Scenes you generate with SYNTH3D are yours to use however you like, including in commercial projects.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Does it work offline?</summary>
+              <p>Scene generation requires an internet connection for the AI model. Rendering and export happen locally.</p>
+            </details>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    // Active docs nav link on scroll
+    const sections = document.querySelectorAll('.docs-section');
+    const navLinks = document.querySelectorAll('.docs-nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — SYNTH3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="extra.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SYNTH<span>3D</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="download.html" class="nav-cta">Download</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="download.html">Download</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1" style="opacity:0.1"></div>
+    </div>
+    <div class="page-hero-content">
+      <p class="section-tag">Gallery</p>
+      <h1>Worlds made with <span class="gradient-text">SYNTH3D</span></h1>
+      <p class="hero-sub" style="margin: 0 auto">Every scene was generated from a single text prompt. No manual modelling.</p>
+    </div>
+  </section>
+
+  <section style="background: var(--bg); padding-top: 0;">
+    <!-- Filter bar -->
+    <div class="gallery-filter">
+      <button class="gf-btn active" data-filter="all">All</button>
+      <button class="gf-btn" data-filter="nature">Nature</button>
+      <button class="gf-btn" data-filter="urban">Urban</button>
+      <button class="gf-btn" data-filter="fantasy">Fantasy</button>
+      <button class="gf-btn" data-filter="scifi">Sci-Fi</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+
+      <div class="gallery-card" data-tag="fantasy">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #1a0a00, #3d1f00, #c8a46b);">
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"Foggy medieval village at dusk, stone buildings, lanterns glowing"</div>
+            <div class="gallery-tags"><span>Fantasy</span><span>2.9s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card gallery-card-wide" data-tag="urban">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #0f3460);">
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"Rainy cyberpunk megacity at 2am, neon reflections on wet streets"</div>
+            <div class="gallery-tags"><span>Urban</span><span>4.8s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card" data-tag="nature">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #0d1b2a, #1a3a5c, #c87941);">
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"Mountain canyon at golden hour, long shadows, eagle soaring"</div>
+            <div class="gallery-tags"><span>Nature</span><span>3.2s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card" data-tag="scifi">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #00111a, #002233, #55ccff);">
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"Ancient sunken ruins deep underwater, shafts of light, coral growth"</div>
+            <div class="gallery-tags"><span>Sci-Fi</span><span>3.7s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card gallery-card-tall" data-tag="fantasy">
+        <div class="gallery-img" style="background: linear-gradient(160deg, #001a0d, #006b3c, #7fffbb);">
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"Bioluminescent forest at night, blue-green glow, misty air"</div>
+            <div class="gallery-tags"><span>Fantasy</span><span>5.1s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card" data-tag="nature">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #1a1000, #4a3000, #e8c060);">
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"Desert oasis at noon, palm trees, clear blue water, distant dunes"</div>
+            <div class="gallery-tags"><span>Nature</span><span>2.7s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card" data-tag="scifi">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #0a001a, #1a0040, #8800ff);">
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"Space station interior, zero-gravity lab, holographic displays, starfield"</div>
+            <div class="gallery-tags"><span>Sci-Fi</span><span>4.2s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card gallery-card-wide" data-tag="nature">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #001040, #003080, #c0d8ff);">
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"Frozen arctic tundra, cracked ice, aurora borealis, lone wolf silhouette"</div>
+            <div class="gallery-tags"><span>Nature</span><span>3.9s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card" data-tag="urban">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #1a0a00, #401800, #ff7000);">
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"Post-apocalyptic city, overgrown skyscrapers, vines and moss, golden light"</div>
+            <div class="gallery-tags"><span>Urban</span><span>4.5s</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-orb"></div>
+      <p class="cta-tag">Create your own</p>
+      <h2 class="cta-title">What world will you build?</h2>
+      <a href="download.html" class="btn btn-primary btn-lg">Download SYNTH3D</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><a href="index.html" class="nav-logo">SYNTH<span>3D</span></a><p>AI-powered 3D world generation, built on Unity.</p></div>
+      <div class="footer-links">
+        <div class="footer-col"><h4>Product</h4><ul><li><a href="features.html">Features</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="download.html">Download</a></li></ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul><li><a href="docs.html">Documentation</a></li><li><a href="#">Changelog</a></li><li><a href="#">GitHub</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">Twitter / X</a></li><li><a href="#">Discord</a></li><li><a href="#">Contact</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 SYNTH3D. All rights reserved.</p></div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Gallery filter
+    const filterBtns = document.querySelectorAll('.gf-btn');
+    const cards      = document.querySelectorAll('.gallery-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(c => {
+          const show = f === 'all' || c.dataset.tag === f;
+          c.style.opacity = show ? '1' : '0.2';
+          c.style.pointerEvents = show ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

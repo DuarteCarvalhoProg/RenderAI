@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — SYNTH3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="extra.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SYNTH<span>3D</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html" class="active">Features</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="download.html" class="nav-cta">Download</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="download.html">Download</a></li>
+    </ul>
+  </div>
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1" style="opacity:0.1"></div>
+      <div class="orb orb-2" style="opacity:0.07"></div>
+    </div>
+    <div class="page-hero-content">
+      <p class="section-tag">Capabilities</p>
+      <h1>Everything you need to<br /><span class="gradient-text">build 3D worlds with AI</span></h1>
+      <p class="hero-sub" style="margin:0 auto">From first prompt to finished scene — SYNTH3D handles the full pipeline so you can focus on your vision.</p>
+    </div>
+  </section>
+
+  <!-- Features detail -->
+  <section style="background: var(--bg);">
+    <div class="features-detail-grid">
+
+      <div class="feature-detail-row">
+        <div class="fd-text">
+          <div class="feature-tag">Core Engine</div>
+          <h2>Natural language to 3D</h2>
+          <p>SYNTH3D's AI model understands spatial relationships, materials, lighting, atmosphere, and scale — all from a single sentence. No keywords, no special syntax. Just describe what you see in your mind.</p>
+          <ul class="fd-list">
+            <li>✦ Understands adjectives (foggy, ancient, brutalist, glowing)</li>
+            <li>✦ Spatial awareness (behind, beneath, towering over)</li>
+            <li>✦ Time & weather (dusk, midnight, rainy, blazing noon)</li>
+            <li>✦ Art style inference (photorealistic, stylised, low-poly)</li>
+          </ul>
+        </div>
+        <div class="fd-visual fd-visual-code">
+          <div class="terminal-window" style="max-width: 100%;">
+            <div class="terminal-bar">
+              <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+              <span class="t-title">synth3d — prompt</span>
+            </div>
+            <div class="terminal-body" style="color: var(--text-2); line-height: 1.9;">
+              <div style="color: var(--accent); margin-bottom:8px;">$ generate</div>
+              <div style="color: var(--text);">"A brutalist concrete library at dusk, long<br /> shadows across cracked steps, warm light<br /> from tall narrow windows, pigeons resting"</div>
+              <br/>
+              <div style="color: #4ade80;">▸ 47 objects placed</div>
+              <div style="color: #4ade80;">▸ 12 material variants applied</div>
+              <div style="color: #4ade80;">▸ Directional light: 6500K, 18°</div>
+              <div style="color: #4ade80;">✔ Ready in 3.4s</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-detail-row feature-detail-row-reverse">
+        <div class="fd-text">
+          <div class="feature-tag">Iteration</div>
+          <h2>Refine with follow-up prompts</h2>
+          <p>Your first prompt is never the last. Refine, adjust, and evolve your scene through conversation. SYNTH3D keeps context between prompts so every change builds on what came before.</p>
+          <ul class="fd-list">
+            <li>✦ "Make it more foggy and add some mist near the ground"</li>
+            <li>✦ "Add a river running through the valley"</li>
+            <li>✦ "Remove the trees on the left side"</li>
+            <li>✦ "Change the time to just before sunrise"</li>
+          </ul>
+        </div>
+        <div class="fd-visual" style="background: linear-gradient(135deg, #0a0a1a, #1a1a40); border-radius: var(--radius-lg); border: 1px solid var(--border-hi); min-height: 280px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; padding: 32px;">
+          <div style="font-size:2rem;">🔄</div>
+          <div style="font-family: var(--font-display); font-weight:700; color:var(--text);">Iterative by design</div>
+          <div style="color: var(--text-3); font-size: 0.85rem; text-align:center;">Every generation remembers context from your previous prompts</div>
+        </div>
+      </div>
+
+      <div class="feature-detail-row">
+        <div class="fd-text">
+          <div class="feature-tag">Export</div>
+          <h2>Ready for any pipeline</h2>
+          <p>Export your generated scene in industry-standard formats. Whether you're building a game, a cinematic, or an architectural visualisation — SYNTH3D outputs files that plug straight into your workflow.</p>
+          <ul class="fd-list">
+            <li>✦ <strong>.unitypackage</strong> — drop into any Unity project</li>
+            <li>✦ <strong>.fbx / .obj</strong> — universal 3D formats</li>
+            <li>✦ <strong>.glTF / .glb</strong> — for web & AR/VR</li>
+            <li>✦ <strong>PNG / EXR</strong> — rendered stills at any resolution</li>
+          </ul>
+        </div>
+        <div class="fd-visual" style="background: linear-gradient(135deg, #0d1f0d, #1a4020); border-radius: var(--radius-lg); border: 1px solid var(--border-hi); min-height: 280px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; padding: 32px;">
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <span style="background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.25); color:#4ade80; padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;">.unitypackage</span>
+            <span style="background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.25); color:#4ade80; padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;">.fbx</span>
+            <span style="background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.25); color:#4ade80; padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;">.glTF</span>
+            <span style="background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.25); color:#4ade80; padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;">.obj</span>
+            <span style="background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.25); color:#4ade80; padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;">.glb</span>
+            <span style="background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.25); color:#4ade80; padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;">EXR</span>
+          </div>
+          <div style="color: var(--text-3); font-size: 0.82rem; text-align:center; margin-top:8px;">Export to any format · One click</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-orb"></div>
+      <p class="cta-tag">Early Access</p>
+      <h2 class="cta-title">Start building for free</h2>
+      <p class="cta-sub">The beta is open. No account, no credit card.</p>
+      <a href="download.html" class="btn btn-primary btn-lg">Download SYNTH3D</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">SYNTH<span>3D</span></a>
+        <p>AI-powered 3D world generation, built on Unity.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul><li><a href="features.html">Features</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="download.html">Download</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul><li><a href="docs.html">Documentation</a></li><li><a href="#">Changelog</a></li><li><a href="#">GitHub</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul><li><a href="#">Twitter / X</a></li><li><a href="#">Discord</a></li><li><a href="#">Contact</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 SYNTH3D. All rights reserved.</p></div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

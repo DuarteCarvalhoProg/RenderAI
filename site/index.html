@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SYNTH3D — AI-Powered 3D World Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SYNTH<span>3D</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="download.html" class="nav-cta">Download</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="download.html">Download</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Powered by Generative AI + Unity
+      </div>
+      <h1 class="hero-title">
+        Describe it.<br />
+        <span class="gradient-text">Watch it appear.</span>
+      </h1>
+      <p class="hero-sub">
+        Type a prompt. SYNTH3D generates a fully rendered, interactive 3D environment — in seconds. No modelling skills required.
+      </p>
+      <div class="hero-actions">
+        <a href="download.html" class="btn btn-primary">Download Beta</a>
+        <a href="gallery.html" class="btn btn-ghost">See Gallery ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Worlds possible</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">&lt;5s</span><span class="stat-label">Generation time</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">Unity</span><span class="stat-label">Real-time engine</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <span class="t-dot red"></span>
+          <span class="t-dot yellow"></span>
+          <span class="t-dot green"></span>
+          <span class="t-title">synth3d — prompt</span>
+        </div>
+        <div class="terminal-body">
+          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd typed">generate "a foggy medieval village at dusk, stone buildings, lanterns glowing"</span></div>
+          <div class="t-output" id="terminalOutput"></div>
+        </div>
+      </div>
+      <div class="render-preview" id="renderPreview">
+        <div class="render-ring"></div>
+        <div class="render-label">3D Scene Preview</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCROLL INDICATOR -->
+  <div class="scroll-hint">
+    <div class="scroll-arrow"></div>
+    <span>Scroll to explore</span>
+  </div>
+
+  <!-- FEATURE STRIP -->
+  <section class="feature-strip">
+    <div class="strip-inner">
+      <div class="strip-item">
+        <div class="strip-icon">✦</div>
+        <span>Natural language input</span>
+      </div>
+      <div class="strip-item">
+        <div class="strip-icon">✦</div>
+        <span>Real-time Unity rendering</span>
+      </div>
+      <div class="strip-item">
+        <div class="strip-icon">✦</div>
+        <span>Export-ready assets</span>
+      </div>
+      <div class="strip-item">
+        <div class="strip-icon">✦</div>
+        <span>AI lighting & atmosphere</span>
+      </div>
+      <div class="strip-item">
+        <div class="strip-icon">✦</div>
+        <span>Iterate with follow-up prompts</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDER SECTION -->
+  <section class="slider-section" id="showcase">
+    <div class="section-header">
+      <p class="section-tag">Showcase</p>
+      <h2>From prompt to world</h2>
+      <p class="section-sub">Every environment below was generated entirely from a single text prompt.</p>
+    </div>
+    <div class="slider-wrapper">
+      <div class="slider-track" id="sliderTrack">
+
+        <div class="slide">
+          <div class="slide-img" style="background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 40%, #2d6fa8 70%, #c87941 100%);">
+            <div class="slide-overlay">
+              <div class="scene-particles">
+                <div class="particle"></div><div class="particle"></div>
+                <div class="particle"></div><div class="particle"></div>
+              </div>
+              <div class="scene-label-inner">
+                <div class="scene-icon">🏔</div>
+                <span>Mountain Canyon at Sunset</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <div class="slide-prompt">"A dramatic mountain canyon at golden hour, long shadows, eagle soaring overhead"</div>
+            <div class="slide-meta">
+              <span class="slide-time">⏱ 3.2s</span>
+              <span class="slide-engine">Unity HDRP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-img" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 30%, #16213e 60%, #0f3460 100%);">
+            <div class="slide-overlay">
+              <div class="scene-particles">
+                <div class="particle"></div><div class="particle"></div>
+                <div class="particle"></div><div class="particle"></div>
+              </div>
+              <div class="scene-label-inner">
+                <div class="scene-icon">🌆</div>
+                <span>Cyberpunk City Night</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <div class="slide-prompt">"A rainy cyberpunk megacity at 2am, neon reflections on wet streets, flying vehicles"</div>
+            <div class="slide-meta">
+              <span class="slide-time">⏱ 4.8s</span>
+              <span class="slide-engine">Unity URP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-img" style="background: linear-gradient(135deg, #1a0a00 0%, #3d1f00 30%, #6b3a1f 55%, #c8a46b 100%);">
+            <div class="slide-overlay">
+              <div class="scene-particles">
+                <div class="particle"></div><div class="particle"></div>
+                <div class="particle"></div><div class="particle"></div>
+              </div>
+              <div class="scene-label-inner">
+                <div class="scene-icon">🏰</div>
+                <span>Medieval Village at Dusk</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <div class="slide-prompt">"A foggy medieval village at dusk, stone buildings, lanterns glowing, cobblestone paths"</div>
+            <div class="slide-meta">
+              <span class="slide-time">⏱ 2.9s</span>
+              <span class="slide-engine">Unity HDRP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-img" style="background: linear-gradient(135deg, #001a0d 0%, #003d1f 30%, #006b3c 60%, #00c872 90%, #7fffbb 100%);">
+            <div class="slide-overlay">
+              <div class="scene-particles">
+                <div class="particle"></div><div class="particle"></div>
+                <div class="particle"></div><div class="particle"></div>
+              </div>
+              <div class="scene-label-inner">
+                <div class="scene-icon">🌿</div>
+                <span>Bioluminescent Forest</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <div class="slide-prompt">"A deep forest at night where plants glow with soft blue-green bioluminescence, misty air"</div>
+            <div class="slide-meta">
+              <span class="slide-time">⏱ 5.1s</span>
+              <span class="slide-engine">Unity HDRP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-img" style="background: linear-gradient(135deg, #00111a 0%, #002233 30%, #004466 55%, #0077aa 80%, #55ccff 100%);">
+            <div class="slide-overlay">
+              <div class="scene-particles">
+                <div class="particle"></div><div class="particle"></div>
+                <div class="particle"></div><div class="particle"></div>
+              </div>
+              <div class="scene-label-inner">
+                <div class="scene-icon">🌊</div>
+                <span>Underwater Ruins</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <div class="slide-prompt">"Ancient sunken ruins deep underwater, shafts of light through the water, coral growth"</div>
+            <div class="slide-meta">
+              <span class="slide-time">⏱ 3.7s</span>
+              <span class="slide-engine">Unity URP</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="slider-btn slider-prev" id="prevBtn" aria-label="Previous">‹</button>
+      <button class="slider-btn slider-next" id="nextBtn" aria-label="Next">›</button>
+
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section">
+    <div class="section-header">
+      <p class="section-tag">Workflow</p>
+      <h2>Three steps to a 3D world</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon-wrap">
+          <div class="step-icon">✍</div>
+        </div>
+        <h3>Write your prompt</h3>
+        <p>Describe your scene in plain language. Be specific or abstract — SYNTH3D understands both.</p>
+        <div class="step-example">"A desert oasis at noon with palm trees, clear water, distant dunes"</div>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon-wrap">
+          <div class="step-icon">⚡</div>
+        </div>
+        <h3>AI generates the scene</h3>
+        <p>Our AI interprets your prompt, builds geometry, applies materials, places objects and sets lighting — all automatically.</p>
+        <div class="step-bar">
+          <div class="step-bar-fill"></div>
+        </div>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon-wrap">
+          <div class="step-icon">🎮</div>
+        </div>
+        <h3>Explore & export</h3>
+        <p>Walk through your scene in Unity, refine with follow-up prompts, then export assets for your project.</p>
+        <a href="features.html" class="step-link">See export options →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE CARDS -->
+  <section class="features-section">
+    <div class="section-header">
+      <p class="section-tag">Capabilities</p>
+      <h2>Built for creators</h2>
+      <p class="section-sub">Whether you're a solo dev, a studio, or a student — SYNTH3D adapts to your workflow.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card feature-card-large">
+        <div class="feature-card-bg" style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);"></div>
+        <div class="feature-card-content">
+          <div class="feature-tag">Core</div>
+          <h3>Natural language → 3D geometry</h3>
+          <p>Our model converts semantic descriptions into procedural 3D scene graphs, then renders them in Unity's real-time engine.</p>
+          <div class="feature-gfx">
+            <div class="code-chip">generate("ancient temple, overgrown with vines, moonlight")</div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-bg" style="background: linear-gradient(135deg, #0a1628, #1e3a5f);"></div>
+        <div class="feature-card-content">
+          <div class="feature-tag">Lighting</div>
+          <h3>AI atmospheric lighting</h3>
+          <p>Time of day, weather, and mood are all inferred from your prompt and applied automatically.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-bg" style="background: linear-gradient(135deg, #0d1f0d, #1a4020);"></div>
+        <div class="feature-card-content">
+          <div class="feature-tag">Iteration</div>
+          <h3>Refine with follow-up prompts</h3>
+          <p>Say "make it more foggy" or "add a river" and watch your scene update in real time.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-bg" style="background: linear-gradient(135deg, #1f0d0d, #401a1a);"></div>
+        <div class="feature-card-content">
+          <div class="feature-tag">Export</div>
+          <h3>Export-ready assets</h3>
+          <p>Download your scene as FBX, glTF, or a Unity package — ready to drop into your own project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-orb"></div>
+      <p class="cta-tag">Early Access</p>
+      <h2 class="cta-title">Ready to build your world?</h2>
+      <p class="cta-sub">Join thousands of creators already using SYNTH3D. The beta is free.</p>
+      <a href="download.html" class="btn btn-primary btn-lg">Download for free</a>
+      <p class="cta-note">Windows & macOS · No account required</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">SYNTH<span>3D</span></a>
+        <p>AI-powered 3D world generation, built on Unity.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="download.html">Download</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">GitHub</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Twitter / X</a></li>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 SYNTH3D. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
