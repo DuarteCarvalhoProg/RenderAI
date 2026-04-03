@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reset Password — SYNTH3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body class="auth-body">
+
+  <div class="auth-bg">
+    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+  </div>
+
+  <a href="login.html" class="auth-back">← Back to sign in</a>
+
+  <div class="auth-container">
+    <div class="auth-card">
+
+      <div class="auth-header">
+        <div class="auth-logo">SYNTH<span>3D</span></div>
+        <h1>Reset your password</h1>
+        <p>Enter your email and we'll send you a reset link</p>
+      </div>
+
+      <div class="auth-alert" id="authAlert" style="display:none;"></div>
+
+      <form class="auth-form" id="forgotForm" novalidate>
+        <div class="field-group">
+          <label for="email">Email</label>
+          <div class="field-wrap">
+            <input type="email" id="email" placeholder="you@example.com" autocomplete="email" required />
+            <span class="field-icon">✉</span>
+          </div>
+          <p class="field-error" id="emailError"></p>
+        </div>
+
+        <button type="submit" class="auth-submit" id="submitBtn">
+          <span id="submitText">Send reset link</span>
+          <span class="auth-spinner" id="submitSpinner" style="display:none;"></span>
+        </button>
+      </form>
+
+      <p class="auth-footer">
+        Remembered it? <a href="login.html">Sign in</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    initForgotPage();
+  </script>
+</body>
+</html>

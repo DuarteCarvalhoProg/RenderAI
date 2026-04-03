@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Check your email — SYNTH3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body class="auth-body">
+
+  <div class="auth-bg">
+    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <a href="index.html" class="auth-back">← SYNTH<span>3D</span></a>
+
+  <div class="auth-container">
+    <div class="auth-card auth-card-center">
+
+      <div class="confirm-icon">✉</div>
+      <h1>Check your email</h1>
+      <p class="confirm-sub">
+        We've sent a confirmation link to<br />
+        <strong id="confirmEmail">your email address</strong>
+      </p>
+
+      <div class="confirm-steps">
+        <div class="confirm-step">
+          <div class="step-num-sm">1</div>
+          <span>Open the email from SYNTH3D</span>
+        </div>
+        <div class="confirm-step">
+          <div class="step-num-sm">2</div>
+          <span>Click the confirmation link</span>
+        </div>
+        <div class="confirm-step">
+          <div class="step-num-sm">3</div>
+          <span>You'll be signed in automatically</span>
+        </div>
+      </div>
+
+      <div class="auth-alert" id="resendAlert" style="display:none;"></div>
+
+      <button class="auth-submit" id="resendBtn" type="button">
+        <span id="resendText">Resend confirmation email</span>
+        <span class="auth-spinner" id="resendSpinner" style="display:none;"></span>
+      </button>
+
+      <p class="confirm-note">
+        Didn't receive it? Check your spam folder.<br />
+        Wrong email? <a href="register.html">Start over</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    initConfirmPage();
+  </script>
+</body>
+</html>
