@@ -6,6 +6,8 @@
 
 /* ── Helpers ── */
 
+const BASE_URL = 'http://127.0.0.1:5500/site';
+
 function showAlert(id, message, type = 'error') {
     const el = document.getElementById(id);
     if (!el) return;
@@ -89,7 +91,7 @@ function showAlert(id, message, type = 'error') {
       googleBtn.addEventListener('click', async () => {
         const { error } = await window.sb.auth.signInWithOAuth({
           provider: 'google',
-          options: { redirectTo: window.location.origin + '/index.html' }
+          options: { redirectTo: BASE_URL + '/index.html' }
         });
         if (error) showAlert('authAlert', error.message);
       });
@@ -99,7 +101,7 @@ function showAlert(id, message, type = 'error') {
       githubBtn.addEventListener('click', async () => {
         const { error } = await window.sb.auth.signInWithOAuth({
           provider: 'github',
-          options: { redirectTo: window.location.origin + '/index.html' }
+          options: { redirectTo: BASE_URL + '/index.html' }
         });
         if (error) showAlert('authAlert', error.message);
       });
@@ -248,8 +250,8 @@ function showAlert(id, message, type = 'error') {
         email,
         password,
         options: {
-          data: { username },           // stored in user metadata
-          emailRedirectTo: window.location.origin + '/login.html',
+          data: { username },           
+          emailRedirectTo: BASE_URL + '/login.html',
         }
       });
   
@@ -292,7 +294,7 @@ function showAlert(id, message, type = 'error') {
         const { error } = await window.sb.auth.resend({
           type: 'signup',
           email,
-          options: { emailRedirectTo: window.location.origin + '/login.html' }
+          options: { emailRedirectTo: BASE_URL + '/reset-password.html' }
         });
   
         setLoading('resendBtn', 'resendSpinner', 'resendText', false, 'Resend confirmation email');
@@ -336,7 +338,7 @@ function showAlert(id, message, type = 'error') {
       setLoading('submitBtn', 'submitSpinner', 'submitText', true, 'Sending…');
   
       const { error } = await window.sb.auth.resetPasswordForEmail(email, {
-        redirectTo: window.location.origin + '/reset-password.html',
+        redirectTo: BASE_URL + '/reset-password.html',
       });
   
       setLoading('submitBtn', 'submitSpinner', 'submitText', false, 'Send reset link');

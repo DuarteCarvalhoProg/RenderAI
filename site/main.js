@@ -116,3 +116,39 @@ document.querySelectorAll('.step-card, .feature-card, .slide-info').forEach(el =
   el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
   observer.observe(el);
 });
+
+// ── Auth state — atualiza o nav consoante o utilizador ──
+async function updateNav() {
+  const { data } = await window.sb.auth.getUser();
+  const user = data?.user;
+  const navLinks = document.querySelector('.nav-links');
+  if (!navLinks) return;
+
+  // Remove o botão nav-cta atual
+  const existingCta = navLinks.querySelector('.nav-cta');
+  if (existingCta) existingCta.parentElement.remove();
+
+  if (user) {
+    // Utilizador autenticado — mostra Download + nome + logout
+    const username = user.user_metadata?.username || user.email.split('@')[0];
+    navLinks.insertAdjacentHTML('beforeend', `
+      <li><a href="download.html" class="nav-cta">Download</a></li>
+      <li class="nav-user">
+        <span class="nav-username">👤 ${username}</span>
+        <button class="nav-logout" id="logoutBtn">Sign out</button>
+      </li>
+    `);
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await window.sb.auth.signOut();
+      window.location.reload();
+    });
+  } else {
+    // Não autenticado — mostra Download + Sign in
+    navLinks.insertAdjacentHTML('beforeend', `
+      <li><a href="download.html" class="nav-cta">Download</a></li>
+      <li><a href="login.html" class="nav-sign-in">Sign in</a></li>
+    `);
+  }
+}
+
+if (window.sb) updateNav();

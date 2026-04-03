@@ -953,3 +953,24 @@
     .slide-img { height: 240px; }
     .hero-title { font-size: 2.2rem; }
   }
+  .nav-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-username {
+    font-size: 0.85rem;
+    color: var(--text-2);
+    font-weight: 500;
+  }
+  .nav-logout {
+    background: transparent;
+    border: 1px solid var(--border-hi);
+    cursor: pointer;
+    font-family: var(--font-body);
+  }
+  .nav-logout:hover {
+    background: rgba(220, 38, 38, 0.15);
+    border-color: rgba(220, 38, 38, 0.4);
+    color: #fca5a5;
+  }
