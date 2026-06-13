@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SYNTH3D — AI-Powered 3D World Generator</title>
+  <title>RenderAI — AI-Powered 3D World Generator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -14,7 +14,7 @@
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">SYNTH<span>3D</span></a>
+      <a href="index.html" class="nav-logo">Render<span>AI</span></a>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="features.html">Features</a></li>
@@ -35,8 +35,6 @@
       <li><a href="features.html">Features</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="docs.html">Docs</a></li>
-      <li><a href="login.html">Sign In</a></li>
-      <li><a href="register.html">Sign Up</a></li>
       <li><a href="download.html">Download</a></li>
     </ul>
   </div>
@@ -59,7 +57,7 @@
         <span class="gradient-text">Watch it appear.</span>
       </h1>
       <p class="hero-sub">
-        Type a prompt. SYNTH3D generates a fully rendered, interactive 3D environment — in seconds. No modelling skills required.
+        Type a prompt. RenderAI generates a fully rendered, interactive 3D environment — in seconds. No modelling skills required.
       </p>
       <div class="hero-actions">
         <a href="download.html" class="btn btn-primary">Download Beta</a>
@@ -79,7 +77,7 @@
           <span class="t-dot red"></span>
           <span class="t-dot yellow"></span>
           <span class="t-dot green"></span>
-          <span class="t-title">synth3d — prompt</span>
+          <span class="t-title">renderai — prompt</span>
         </div>
         <div class="terminal-body">
           <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd typed">generate "a foggy medieval village at dusk, stone buildings, lanterns glowing"</span></div>
@@ -129,49 +127,310 @@
   <section class="slider-section" id="showcase">
     <div class="section-header">
       <p class="section-tag">Showcase</p>
-      <h2>From prompt to world</h2>
-      <p class="section-sub">Every environment below was generated entirely from a single text prompt.</p>
+      <h2>Same room. Different world.</h2>
+      <p class="section-sub">Start with any room. Describe a theme. RenderAI rebuilds it entirely — same space, new reality.</p>
     </div>
     <div class="slider-wrapper">
       <div class="slider-track" id="sliderTrack">
 
+        <!-- SLIDE 1: Base room → Egyptian -->
         <div class="slide">
-          <div class="slide-img" style="background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 40%, #2d6fa8 70%, #c87941 100%);">
+          <div class="slide-img">
+            <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+              <defs>
+                <linearGradient id="eg-sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#c8860a"/>
+                  <stop offset="100%" stop-color="#7a3f00"/>
+                </linearGradient>
+                <linearGradient id="eg-floor" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#d4a84b"/>
+                  <stop offset="100%" stop-color="#8b6914"/>
+                </linearGradient>
+                <linearGradient id="eg-wall" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#b5860d"/>
+                  <stop offset="100%" stop-color="#e8c060"/>
+                </linearGradient>
+              </defs>
+              <!-- Background sky/wall -->
+              <rect width="600" height="360" fill="url(#eg-sky)"/>
+              <!-- Back wall -->
+              <rect x="60" y="40" width="480" height="240" fill="url(#eg-wall)" opacity="0.85"/>
+              <!-- Hieroglyph strips on wall -->
+              <rect x="60" y="40" width="480" height="18" fill="#c8940a" opacity="0.6"/>
+              <rect x="60" y="262" width="480" height="18" fill="#c8940a" opacity="0.6"/>
+              <!-- Hieroglyph symbols -->
+              <text x="90" y="56" font-size="12" fill="#3d1f00" opacity="0.8">𓂀 𓃠 𓆣 𓇋 𓈖 𓉐 𓊪 𓋴 𓌀 𓍿 𓎛 𓏏 𓐍 𓀭 𓁹</text>
+              <text x="90" y="277" font-size="12" fill="#3d1f00" opacity="0.8">𓂀 𓃠 𓆣 𓇋 𓈖 𓉐 𓊪 𓋴 𓌀 𓍿 𓎛 𓏏 𓐍 𓀭 𓁹</text>
+              <!-- Floor -->
+              <polygon points="0,300 600,300 600,360 0,360" fill="url(#eg-floor)"/>
+              <!-- Floor tiles -->
+              <line x1="0" y1="330" x2="600" y2="330" stroke="#8b6914" stroke-width="1" opacity="0.5"/>
+              <line x1="100" y1="300" x2="100" y2="360" stroke="#8b6914" stroke-width="1" opacity="0.5"/>
+              <line x1="200" y1="300" x2="200" y2="360" stroke="#8b6914" stroke-width="1" opacity="0.5"/>
+              <line x1="300" y1="300" x2="300" y2="360" stroke="#8b6914" stroke-width="1" opacity="0.5"/>
+              <line x1="400" y1="300" x2="400" y2="360" stroke="#8b6914" stroke-width="1" opacity="0.5"/>
+              <line x1="500" y1="300" x2="500" y2="360" stroke="#8b6914" stroke-width="1" opacity="0.5"/>
+              <!-- Left pillar -->
+              <rect x="70" y="55" width="50" height="245" fill="#c8940a"/>
+              <rect x="72" y="55" width="46" height="10" fill="#e8c060"/>
+              <rect x="72" y="290" width="46" height="10" fill="#e8c060"/>
+              <text x="78" y="180" font-size="11" fill="#3d1f00" transform="rotate(90,95,180)">𓂀𓃠𓆣𓇋𓈖𓉐𓊪</text>
+              <!-- Right pillar -->
+              <rect x="480" y="55" width="50" height="245" fill="#c8940a"/>
+              <rect x="482" y="55" width="46" height="10" fill="#e8c060"/>
+              <rect x="482" y="290" width="46" height="10" fill="#e8c060"/>
+              <text x="488" y="180" font-size="11" fill="#3d1f00" transform="rotate(90,505,180)">𓂀𓃠𓆣𓇋𓈖𓉐𓊪</text>
+              <!-- Bed (Egyptian style) -->
+              <rect x="200" y="230" width="200" height="60" rx="4" fill="#8b4513"/>
+              <rect x="200" y="220" width="200" height="20" rx="3" fill="#d4a84b"/>
+              <rect x="200" y="218" width="200" height="8" rx="2" fill="#e8c060"/>
+              <!-- Bed legs -->
+              <rect x="205" y="287" width="12" height="13" fill="#5c2d00"/>
+              <rect x="383" y="287" width="12" height="13" fill="#5c2d00"/>
+              <!-- Headboard with eye of horus -->
+              <rect x="390" y="195" width="12" height="55" fill="#8b4513"/>
+              <ellipse cx="396" cy="210" rx="10" ry="7" fill="#c8940a"/>
+              <ellipse cx="396" cy="210" rx="5" ry="4" fill="#3d1f00"/>
+              <ellipse cx="396" cy="210" rx="2" ry="2" fill="#e8c060"/>
+              <!-- Pillows -->
+              <rect x="210" y="222" width="70" height="16" rx="6" fill="#e8c060"/>
+              <rect x="295" y="222" width="70" height="16" rx="6" fill="#e8c060"/>
+              <!-- Anubis statue left -->
+              <rect x="105" y="210" width="20" height="70" fill="#c8940a"/>
+              <ellipse cx="115" cy="205" rx="12" ry="15" fill="#c8940a"/>
+              <polygon points="109,195 121,195 115,178" fill="#c8940a"/>
+              <!-- Torch lights -->
+              <rect x="145" y="160" width="8" height="40" fill="#5c2d00"/>
+              <ellipse cx="149" cy="158" rx="8" ry="12" fill="#ff8c00" opacity="0.9"/>
+              <ellipse cx="149" cy="155" rx="4" ry="7" fill="#ffff00" opacity="0.7"/>
+              <rect x="440" y="160" width="8" height="40" fill="#5c2d00"/>
+              <ellipse cx="444" cy="158" rx="8" ry="12" fill="#ff8c00" opacity="0.9"/>
+              <ellipse cx="444" cy="155" rx="4" ry="7" fill="#ffff00" opacity="0.7"/>
+              <!-- Glow from torches -->
+              <ellipse cx="149" cy="200" rx="40" ry="60" fill="#ff8c00" opacity="0.08"/>
+              <ellipse cx="444" cy="200" rx="40" ry="60" fill="#ff8c00" opacity="0.08"/>
+              <!-- Hanging fabric -->
+              <polygon points="130,40 200,40 170,120" fill="#8b0000" opacity="0.7"/>
+              <polygon points="400,40 470,40 430,120" fill="#8b0000" opacity="0.7"/>
+              <!-- Label overlay -->
+              <rect x="0" y="300" width="600" height="60" fill="url(#eg-sky)" opacity="0.0"/>
+            </svg>
             <div class="slide-overlay">
-              <div class="scene-particles">
-                <div class="particle"></div><div class="particle"></div>
-                <div class="particle"></div><div class="particle"></div>
-              </div>
               <div class="scene-label-inner">
-                <div class="scene-icon">🏔</div>
-                <span>Mountain Canyon at Sunset</span>
+                <div class="scene-icon">🏺</div>
+                <span>Egyptian Theme</span>
               </div>
             </div>
           </div>
           <div class="slide-info">
-            <div class="slide-prompt">"A dramatic mountain canyon at golden hour, long shadows, eagle soaring overhead"</div>
+            <div class="slide-before-after">
+              <span class="before-tag">Base prompt</span>
+              <div class="slide-prompt">"A conventional bedroom"</div>
+              <span class="arrow-down">↓</span>
+              <span class="after-tag">Follow-up</span>
+              <div class="slide-prompt after-prompt">"Turn this room into an Egyptian environment"</div>
+            </div>
             <div class="slide-meta">
-              <span class="slide-time">⏱ 3.2s</span>
+              <span class="slide-time">⏱ 3.4s</span>
               <span class="slide-engine">Unity HDRP</span>
             </div>
           </div>
         </div>
 
+        <!-- SLIDE 2: Base room → Forest -->
         <div class="slide">
-          <div class="slide-img" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 30%, #16213e 60%, #0f3460 100%);">
+          <div class="slide-img">
+            <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+              <defs>
+                <linearGradient id="fr-bg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0a1a0a"/>
+                  <stop offset="100%" stop-color="#1a3a1a"/>
+                </linearGradient>
+                <linearGradient id="fr-floor" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#2d5a1b"/>
+                  <stop offset="100%" stop-color="#1a3a0a"/>
+                </linearGradient>
+                <linearGradient id="fr-light" x1="0.5" y1="0" x2="0.5" y2="1">
+                  <stop offset="0%" stop-color="#90ee90" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#90ee90" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#fr-bg)"/>
+              <!-- Back wall of vines/moss -->
+              <rect x="60" y="40" width="480" height="260" fill="#1a3a1a" opacity="0.9"/>
+              <!-- Vine patterns on wall -->
+              <path d="M100,40 Q120,100 100,160 Q80,220 110,280" stroke="#2d5a1b" stroke-width="4" fill="none"/>
+              <path d="M150,40 Q130,120 160,200 Q180,250 150,300" stroke="#3a6b22" stroke-width="3" fill="none"/>
+              <path d="M450,40 Q470,100 450,180 Q430,240 460,300" stroke="#2d5a1b" stroke-width="4" fill="none"/>
+              <path d="M500,40 Q480,130 510,200 Q530,260 490,300" stroke="#3a6b22" stroke-width="3" fill="none"/>
+              <!-- Leaves on vines -->
+              <ellipse cx="105" cy="100" rx="12" ry="7" fill="#4a7c2f" transform="rotate(-30,105,100)"/>
+              <ellipse cx="95" cy="160" rx="10" ry="6" fill="#5a8c3f" transform="rotate(20,95,160)"/>
+              <ellipse cx="108" cy="230" rx="11" ry="7" fill="#4a7c2f" transform="rotate(-15,108,230)"/>
+              <ellipse cx="455" cy="120" rx="12" ry="7" fill="#4a7c2f" transform="rotate(30,455,120)"/>
+              <ellipse cx="445" cy="200" rx="10" ry="6" fill="#5a8c3f" transform="rotate(-20,445,200)"/>
+              <!-- Floor - moss and grass -->
+              <rect x="0" y="300" width="600" height="60" fill="url(#fr-floor)"/>
+              <ellipse cx="150" cy="305" rx="60" ry="12" fill="#3a6b22" opacity="0.7"/>
+              <ellipse cx="350" cy="308" rx="80" ry="10" fill="#4a7c2f" opacity="0.5"/>
+              <ellipse cx="500" cy="303" rx="50" ry="9" fill="#3a6b22" opacity="0.6"/>
+              <!-- Trees/trunks as room walls -->
+              <rect x="60" y="60" width="35" height="240" fill="#3d2008" rx="5"/>
+              <rect x="505" y="60" width="35" height="240" fill="#3d2008" rx="5"/>
+              <!-- Tree canopy at top -->
+              <ellipse cx="78" cy="60" rx="55" ry="40" fill="#2d5a1b" opacity="0.9"/>
+              <ellipse cx="78" cy="50" rx="40" ry="30" fill="#3a6b22"/>
+              <ellipse cx="522" cy="60" rx="55" ry="40" fill="#2d5a1b" opacity="0.9"/>
+              <ellipse cx="522" cy="50" rx="40" ry="30" fill="#3a6b22"/>
+              <!-- Center canopy ceiling -->
+              <ellipse cx="300" cy="30" rx="180" ry="50" fill="#1a3a1a" opacity="0.8"/>
+              <ellipse cx="220" cy="45" rx="80" ry="35" fill="#2d5a1b" opacity="0.7"/>
+              <ellipse cx="380" cy="45" rx="80" ry="35" fill="#2d5a1b" opacity="0.7"/>
+              <!-- Light shafts through canopy -->
+              <polygon points="250,40 270,40 310,300 290,300" fill="url(#fr-light)"/>
+              <polygon points="320,35 340,35 375,300 355,300" fill="url(#fr-light)"/>
+              <!-- Bed (grown into nature) -->
+              <rect x="195" y="235" width="210" height="55" rx="6" fill="#3d2008"/>
+              <rect x="195" y="222" width="210" height="20" rx="4" fill="#5a8c3f"/>
+              <rect x="195" y="220" width="210" height="8" rx="3" fill="#7ab648"/>
+              <!-- Bed legs as roots -->
+              <path d="M205,290 Q200,310 190,320" stroke="#3d2008" stroke-width="8" fill="none"/>
+              <path d="M395,290 Q400,310 410,320" stroke="#3d2008" stroke-width="8" fill="none"/>
+              <!-- Pillows -->
+              <rect x="208" y="224" width="75" height="14" rx="6" fill="#c8e6a0"/>
+              <rect x="300" y="224" width="75" height="14" rx="6" fill="#c8e6a0"/>
+              <!-- Mushrooms -->
+              <rect x="150" y="285" width="8" height="18" fill="#f5deb3"/>
+              <ellipse cx="154" cy="283" rx="16" ry="10" fill="#cc4444"/>
+              <ellipse cx="148" cy="281" rx="4" ry="2" fill="white" opacity="0.7"/>
+              <ellipse cx="158" cy="279" rx="3" ry="2" fill="white" opacity="0.7"/>
+              <rect x="430" y="288" width="6" height="14" fill="#f5deb3"/>
+              <ellipse cx="433" cy="286" rx="12" ry="8" fill="#cc4444"/>
+              <!-- Fireflies -->
+              <circle cx="180" cy="150" r="3" fill="#ccff00" opacity="0.9"/>
+              <circle cx="180" cy="150" r="7" fill="#ccff00" opacity="0.15"/>
+              <circle cx="420" cy="130" r="3" fill="#ccff00" opacity="0.9"/>
+              <circle cx="420" cy="130" r="7" fill="#ccff00" opacity="0.15"/>
+              <circle cx="300" cy="170" r="2" fill="#ccff00" opacity="0.8"/>
+              <circle cx="300" cy="170" r="6" fill="#ccff00" opacity="0.15"/>
+              <circle cx="250" cy="200" r="2" fill="#aaffaa" opacity="0.9"/>
+              <circle cx="370" cy="190" r="2" fill="#aaffaa" opacity="0.9"/>
+            </svg>
             <div class="slide-overlay">
-              <div class="scene-particles">
-                <div class="particle"></div><div class="particle"></div>
-                <div class="particle"></div><div class="particle"></div>
-              </div>
               <div class="scene-label-inner">
-                <div class="scene-icon">🌆</div>
-                <span>Cyberpunk City Night</span>
+                <div class="scene-icon">🌿</div>
+                <span>Forest Theme</span>
               </div>
             </div>
           </div>
           <div class="slide-info">
-            <div class="slide-prompt">"A rainy cyberpunk megacity at 2am, neon reflections on wet streets, flying vehicles"</div>
+            <div class="slide-before-after">
+              <span class="before-tag">Base prompt</span>
+              <div class="slide-prompt">"A conventional bedroom"</div>
+              <span class="arrow-down">↓</span>
+              <span class="after-tag">Follow-up</span>
+              <div class="slide-prompt after-prompt">"Turn this room into a forest environment"</div>
+            </div>
+            <div class="slide-meta">
+              <span class="slide-time">⏱ 4.1s</span>
+              <span class="slide-engine">Unity HDRP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3: Base room → Cyberpunk -->
+        <div class="slide">
+          <div class="slide-img">
+            <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+              <defs>
+                <linearGradient id="cy-bg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#050510"/>
+                  <stop offset="100%" stop-color="#0a0a20"/>
+                </linearGradient>
+                <linearGradient id="cy-floor" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#111130"/>
+                  <stop offset="100%" stop-color="#050515"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#cy-bg)"/>
+              <!-- Back wall - concrete panels -->
+              <rect x="60" y="40" width="480" height="260" fill="#0d0d22"/>
+              <!-- Panel lines -->
+              <line x1="60" y1="120" x2="540" y2="120" stroke="#1a1a40" stroke-width="2"/>
+              <line x1="60" y1="200" x2="540" y2="200" stroke="#1a1a40" stroke-width="2"/>
+              <line x1="200" y1="40" x2="200" y2="300" stroke="#1a1a40" stroke-width="2"/>
+              <line x1="400" y1="40" x2="400" y2="300" stroke="#1a1a40" stroke-width="2"/>
+              <!-- Neon strips on wall -->
+              <rect x="62" y="118" width="476" height="4" fill="#ff00ff" opacity="0.8"/>
+              <rect x="62" y="198" width="476" height="4" fill="#00ffff" opacity="0.8"/>
+              <!-- Neon glow -->
+              <rect x="62" y="110" width="476" height="20" fill="#ff00ff" opacity="0.06"/>
+              <rect x="62" y="190" width="476" height="20" fill="#00ffff" stroke="none" opacity="0.06"/>
+              <!-- Left wall panel with screen -->
+              <rect x="65" y="50" width="125" height="260" fill="#0a0a1e"/>
+              <rect x="70" y="60" width="115" height="80" fill="#050520"/>
+              <rect x="72" y="62" width="111" height="76" fill="#001133"/>
+              <!-- Screen content -->
+              <line x1="75" y1="75" x2="180" y2="75" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
+              <line x1="75" y1="85" x2="160" y2="85" stroke="#00ffff" stroke-width="1" opacity="0.4"/>
+              <line x1="75" y1="95" x2="170" y2="95" stroke="#00ffff" stroke-width="1" opacity="0.5"/>
+              <rect x="75" y="105" width="50" height="20" fill="#00ffff" opacity="0.2"/>
+              <text x="80" y="119" font-size="8" fill="#00ffff" opacity="0.8">RENDER.AI</text>
+              <!-- Right wall panel -->
+              <rect x="410" y="50" width="125" height="260" fill="#0a0a1e"/>
+              <!-- Neon vertical strips on sides -->
+              <rect x="60" y="40" width="4" height="260" fill="#ff00ff" opacity="0.7"/>
+              <rect x="536" y="40" width="4" height="260" fill="#00ffff" opacity="0.7"/>
+              <!-- Floor -->
+              <rect x="0" y="300" width="600" height="60" fill="url(#cy-floor)"/>
+              <!-- Floor grid/reflection -->
+              <line x1="0" y1="310" x2="600" y2="310" stroke="#ff00ff" stroke-width="1" opacity="0.15"/>
+              <line x1="0" y1="325" x2="600" y2="325" stroke="#00ffff" stroke-width="1" opacity="0.1"/>
+              <line x1="100" y1="300" x2="100" y2="360" stroke="#ff00ff" stroke-width="1" opacity="0.08"/>
+              <line x1="200" y1="300" x2="200" y2="360" stroke="#ff00ff" stroke-width="1" opacity="0.08"/>
+              <line x1="300" y1="300" x2="300" y2="360" stroke="#00ffff" stroke-width="1" opacity="0.08"/>
+              <line x1="400" y1="300" x2="400" y2="360" stroke="#00ffff" stroke-width="1" opacity="0.08"/>
+              <line x1="500" y1="300" x2="500" y2="360" stroke="#ff00ff" stroke-width="1" opacity="0.08"/>
+              <!-- Bed - sleek futuristic -->
+              <rect x="195" y="240" width="210" height="50" rx="2" fill="#0d0d2e"/>
+              <rect x="193" y="237" width="214" height="10" rx="2" fill="#1a1a40"/>
+              <!-- Neon edge on bed -->
+              <rect x="193" y="237" width="214" height="2" fill="#ff00ff" opacity="0.9"/>
+              <rect x="193" y="287" width="214" height="2" fill="#00ffff" opacity="0.7"/>
+              <!-- Bed glow -->
+              <rect x="193" y="237" width="214" height="52" fill="#ff00ff" opacity="0.03"/>
+              <!-- Pillows -->
+              <rect x="208" y="239" width="70" height="12" rx="3" fill="#151535"/>
+              <rect x="322" y="239" width="70" height="12" rx="3" fill="#151535"/>
+              <!-- Pillow neon edge -->
+              <rect x="208" y="239" width="70" height="1.5" fill="#00ffff" opacity="0.6"/>
+              <rect x="322" y="239" width="70" height="1.5" fill="#00ffff" opacity="0.6"/>
+              <!-- Ceiling lights -->
+              <rect x="200" y="40" width="200" height="4" fill="#ff00ff" opacity="0.9"/>
+              <rect x="200" y="40" width="200" height="15" fill="#ff00ff" opacity="0.05"/>
+              <!-- Holographic display above bed -->
+              <rect x="240" y="150" width="120" height="70" fill="#001a33" opacity="0.7" rx="3"/>
+              <rect x="240" y="150" width="120" height="70" stroke="#00ffff" stroke-width="1" fill="none" rx="3" opacity="0.5"/>
+              <text x="255" y="170" font-size="7" fill="#00ffff" opacity="0.8">▸ SCENE LOADED</text>
+              <text x="255" y="182" font-size="7" fill="#ff00ff" opacity="0.7">▸ RENDER.AI v2.1</text>
+              <text x="255" y="194" font-size="7" fill="#00ffff" opacity="0.6">▸ UNITY HDRP</text>
+              <line x1="300" y1="220" x2="300" y2="240" stroke="#00ffff" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+            </svg>
+            <div class="slide-overlay">
+              <div class="scene-label-inner">
+                <div class="scene-icon">🌆</div>
+                <span>Cyberpunk Theme</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <div class="slide-before-after">
+              <span class="before-tag">Base prompt</span>
+              <div class="slide-prompt">"A conventional bedroom"</div>
+              <span class="arrow-down">↓</span>
+              <span class="after-tag">Follow-up</span>
+              <div class="slide-prompt after-prompt">"Turn this room into a cyberpunk environment"</div>
+            </div>
             <div class="slide-meta">
               <span class="slide-time">⏱ 4.8s</span>
               <span class="slide-engine">Unity URP</span>
@@ -179,21 +438,120 @@
           </div>
         </div>
 
+        <!-- SLIDE 4: Base room → Medieval -->
         <div class="slide">
-          <div class="slide-img" style="background: linear-gradient(135deg, #1a0a00 0%, #3d1f00 30%, #6b3a1f 55%, #c8a46b 100%);">
+          <div class="slide-img">
+            <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+              <defs>
+                <linearGradient id="md-bg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#1a1208"/>
+                  <stop offset="100%" stop-color="#2d1f0a"/>
+                </linearGradient>
+                <linearGradient id="md-wall" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#4a3828"/>
+                  <stop offset="100%" stop-color="#3a2a1a"/>
+                </linearGradient>
+                <linearGradient id="md-floor" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#5c4020"/>
+                  <stop offset="100%" stop-color="#3a2810"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#md-bg)"/>
+              <!-- Stone wall -->
+              <rect x="60" y="40" width="480" height="260" fill="url(#md-wall)"/>
+              <!-- Stone texture blocks -->
+              <rect x="62" y="42" width="90" height="35" fill="#4a3828" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="154" y="42" width="100" height="35" fill="#523f2e" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="256" y="42" width="88" height="35" fill="#4a3828" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="346" y="42" width="95" height="35" fill="#523f2e" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="443" y="42" width="95" height="35" fill="#4a3828" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="62" y="79" width="75" height="38" fill="#3e3020" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="139" y="79" width="110" height="38" fill="#4a3828" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="251" y="79" width="95" height="38" fill="#523f2e" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="348" y="79" width="85" height="38" fill="#4a3828" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="435" y="79" width="103" height="38" fill="#3e3020" stroke="#2a1a0a" stroke-width="1"/>
+              <!-- More stone rows -->
+              <rect x="62" y="119" width="98" height="36" fill="#523f2e" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="162" y="119" width="88" height="36" fill="#4a3828" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="252" y="119" width="102" height="36" fill="#3e3020" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="356" y="119" width="90" height="36" fill="#523f2e" stroke="#2a1a0a" stroke-width="1"/>
+              <rect x="448" y="119" width="90" height="36" fill="#4a3828" stroke="#2a1a0a" stroke-width="1"/>
+              <!-- Window with light -->
+              <rect x="245" y="60" width="110" height="75" fill="#1a0a00"/>
+              <rect x="247" y="62" width="106" height="71" fill="#ffcc66" opacity="0.15"/>
+              <!-- Window frame -->
+              <rect x="243" y="58" width="114" height="79" fill="none" stroke="#5c4020" stroke-width="4"/>
+              <line x1="300" y1="58" x2="300" y2="137" stroke="#5c4020" stroke-width="3"/>
+              <line x1="243" y1="97" x2="357" y2="97" stroke="#5c4020" stroke-width="3"/>
+              <!-- Window arch -->
+              <path d="M243,58 Q300,30 357,58" fill="#4a3828" stroke="#5c4020" stroke-width="3"/>
+              <!-- Light beam from window -->
+              <polygon points="247,62 353,62 380,300 220,300" fill="#ffcc66" opacity="0.04"/>
+              <!-- Floor - wooden planks -->
+              <rect x="0" y="300" width="600" height="60" fill="url(#md-floor)"/>
+              <line x1="0" y1="320" x2="600" y2="320" stroke="#2a1a08" stroke-width="2"/>
+              <line x1="0" y1="340" x2="600" y2="340" stroke="#2a1a08" stroke-width="2"/>
+              <line x1="80" y1="300" x2="80" y2="360" stroke="#2a1a08" stroke-width="1" opacity="0.5"/>
+              <line x1="180" y1="300" x2="180" y2="360" stroke="#2a1a08" stroke-width="1" opacity="0.5"/>
+              <line x1="300" y1="300" x2="300" y2="360" stroke="#2a1a08" stroke-width="1" opacity="0.5"/>
+              <line x1="420" y1="300" x2="420" y2="360" stroke="#2a1a08" stroke-width="1" opacity="0.5"/>
+              <line x1="520" y1="300" x2="520" y2="360" stroke="#2a1a08" stroke-width="1" opacity="0.5"/>
+              <!-- Fireplace -->
+              <rect x="255" y="220" width="90" height="80" fill="#2a1a08"/>
+              <rect x="240" y="215" width="120" height="15" fill="#5c4020"/>
+              <rect x="258" y="222" width="84" height="68" fill="#1a0800"/>
+              <!-- Fire -->
+              <ellipse cx="300" cy="280" rx="25" ry="8" fill="#cc3300" opacity="0.8"/>
+              <polygon points="285,280 315,280 308,250 300,240 292,250" fill="#ff6600" opacity="0.9"/>
+              <polygon points="290,275 310,275 305,255 300,245 295,255" fill="#ffaa00" opacity="0.8"/>
+              <polygon points="295,270 305,270 302,258 300,252 298,258" fill="#ffff00" opacity="0.7"/>
+              <!-- Fire glow -->
+              <ellipse cx="300" cy="260" rx="45" ry="35" fill="#ff6600" opacity="0.07"/>
+              <!-- Bed - wooden medieval -->
+              <rect x="130" y="230" width="100" height="60" rx="3" fill="#5c3010"/>
+              <rect x="130" y="220" width="100" height="18" rx="2" fill="#7a4520"/>
+              <!-- Headboard -->
+              <rect x="225" y="200" width="10" height="50" fill="#5c3010"/>
+              <rect x="220" y="198" width="20" height="8" rx="2" fill="#7a4520"/>
+              <!-- Canopy posts -->
+              <rect x="128" y="175" width="6" height="55" fill="#5c3010"/>
+              <rect x="226" y="175" width="6" height="45" fill="#5c3010"/>
+              <rect x="128" y="172" width="110" height="6" fill="#5c3010"/>
+              <!-- Canopy fabric -->
+              <rect x="128" y="172" width="110" height="20" fill="#8b0000" opacity="0.8"/>
+              <!-- Pillows -->
+              <rect x="140" y="222" width="35" height="12" rx="4" fill="#c8b060"/>
+              <rect x="185" y="222" width="35" height="12" rx="4" fill="#c8b060"/>
+              <!-- Candle left -->
+              <rect x="105" y="260" width="8" height="30" fill="#f5deb3"/>
+              <rect x="103" y="285" width="12" height="6" fill="#8b6914"/>
+              <ellipse cx="109" cy="258" rx="4" ry="6" fill="#ff8c00" opacity="0.9"/>
+              <ellipse cx="109" cy="256" rx="2" ry="4" fill="#ffff00" opacity="0.7"/>
+              <ellipse cx="109" cy="270" rx="15" ry="20" fill="#ff8c00" opacity="0.07"/>
+              <!-- Shield on wall -->
+              <path d="M450,80 L490,80 L490,120 L470,140 L450,120 Z" fill="#8b0000"/>
+              <line x1="450" y1="80" x2="490" y2="120" stroke="#c8a84b" stroke-width="2"/>
+              <line x1="490" y1="80" x2="450" y2="120" stroke="#c8a84b" stroke-width="2"/>
+              <!-- Sword on wall -->
+              <rect x="415" y="70" width="5" height="80" fill="#c0c0c0"/>
+              <rect x="405" y="100" width="25" height="5" fill="#c8a84b"/>
+              <rect x="417" y="145" width="8" height="15" rx="2" fill="#8b4513"/>
+            </svg>
             <div class="slide-overlay">
-              <div class="scene-particles">
-                <div class="particle"></div><div class="particle"></div>
-                <div class="particle"></div><div class="particle"></div>
-              </div>
               <div class="scene-label-inner">
                 <div class="scene-icon">🏰</div>
-                <span>Medieval Village at Dusk</span>
+                <span>Medieval Theme</span>
               </div>
             </div>
           </div>
           <div class="slide-info">
-            <div class="slide-prompt">"A foggy medieval village at dusk, stone buildings, lanterns glowing, cobblestone paths"</div>
+            <div class="slide-before-after">
+              <span class="before-tag">Base prompt</span>
+              <div class="slide-prompt">"A conventional bedroom"</div>
+              <span class="arrow-down">↓</span>
+              <span class="after-tag">Follow-up</span>
+              <div class="slide-prompt after-prompt">"Turn this room into a medieval castle chamber"</div>
+            </div>
             <div class="slide-meta">
               <span class="slide-time">⏱ 2.9s</span>
               <span class="slide-engine">Unity HDRP</span>
@@ -201,15 +559,103 @@
           </div>
         </div>
 
+        <!-- SLIDE 4: Base room (original) -->
         <div class="slide">
-          <div class="slide-img" style="background: linear-gradient(135deg, #001a0d 0%, #003d1f 30%, #006b3c 60%, #00c872 90%, #7fffbb 100%);">
+          <div class="slide-img">
+            <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+              <defs>
+                <linearGradient id="base-wall" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#d4c9b8"/>
+                  <stop offset="100%" stop-color="#c0b5a4"/>
+                </linearGradient>
+                <linearGradient id="base-floor" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#b8956a"/>
+                  <stop offset="100%" stop-color="#9a7a55"/>
+                </linearGradient>
+                <linearGradient id="base-sky" x1="0.5" y1="0" x2="0.5" y2="1">
+                  <stop offset="0%" stop-color="#87ceeb"/>
+                  <stop offset="100%" stop-color="#b0d8f0"/>
+                </linearGradient>
+              </defs>
+              <!-- Room background -->
+              <rect width="600" height="360" fill="#e8e0d4"/>
+              <!-- Back wall -->
+              <rect x="60" y="40" width="480" height="260" fill="url(#base-wall)"/>
+              <!-- Skirting board -->
+              <rect x="60" y="285" width="480" height="15" fill="#c0a88a"/>
+              <!-- Window -->
+              <rect x="240" y="60" width="120" height="110" fill="url(#base-sky)"/>
+              <rect x="238" y="58" width="124" height="114" fill="none" stroke="#d4c9b8" stroke-width="6"/>
+              <line x1="300" y1="58" x2="300" y2="172" stroke="#d4c9b8" stroke-width="4"/>
+              <line x1="238" y1="115" x2="362" y2="115" stroke="#d4c9b8" stroke-width="4"/>
+              <!-- Window light -->
+              <polygon points="245,65 355,65 390,300 210,300" fill="#fff8e0" opacity="0.12"/>
+              <!-- Curtains -->
+              <rect x="218" y="55" width="28" height="120" fill="#8b7355" opacity="0.9"/>
+              <rect x="354" y="55" width="28" height="120" fill="#8b7355" opacity="0.9"/>
+              <!-- Floor -->
+              <rect x="0" y="300" width="600" height="60" fill="url(#base-floor)"/>
+              <!-- Floor planks -->
+              <line x1="0" y1="318" x2="600" y2="318" stroke="#9a7a55" stroke-width="1.5"/>
+              <line x1="0" y1="336" x2="600" y2="336" stroke="#9a7a55" stroke-width="1.5"/>
+              <line x1="0" y1="354" x2="600" y2="354" stroke="#9a7a55" stroke-width="1.5"/>
+              <line x1="90" y1="300" x2="90" y2="360" stroke="#9a7a55" stroke-width="1"/>
+              <line x1="200" y1="300" x2="200" y2="360" stroke="#9a7a55" stroke-width="1"/>
+              <line x1="320" y1="300" x2="320" y2="360" stroke="#9a7a55" stroke-width="1"/>
+              <line x1="450" y1="300" x2="450" y2="360" stroke="#9a7a55" stroke-width="1"/>
+              <!-- Bed frame -->
+              <rect x="190" y="230" width="220" height="60" rx="4" fill="#8b6340"/>
+              <rect x="190" y="218" width="220" height="20" rx="3" fill="#a07848"/>
+              <!-- Headboard -->
+              <rect x="402" y="195" width="12" height="65" fill="#8b6340"/>
+              <rect x="396" y="192" width="24" height="10" rx="3" fill="#a07848"/>
+              <!-- Mattress -->
+              <rect x="193" y="220" width="214" height="68" rx="2" fill="#f0ebe0"/>
+              <!-- Duvet -->
+              <rect x="193" y="238" width="214" height="50" rx="2" fill="#d4c4a8"/>
+              <!-- Pillows -->
+              <rect x="205" y="222" width="75" height="18" rx="6" fill="#fff8f0"/>
+              <rect x="295" y="222" width="75" height="18" rx="6" fill="#fff8f0"/>
+              <!-- Bedside tables -->
+              <rect x="140" y="255" width="48" height="45" rx="3" fill="#9a7848"/>
+              <rect x="412" y="255" width="48" height="45" rx="3" fill="#9a7848"/>
+              <!-- Lamp left -->
+              <rect x="158" y="235" width="6" height="22" fill="#c0a070"/>
+              <polygon points="148,234 174,234 168,215 154,215" fill="#e8e0c8"/>
+              <ellipse cx="161" cy="234" rx="13" ry="4" fill="#d4c8a0" opacity="0.5"/>
+              <!-- Lamp right -->
+              <rect x="433" y="235" width="6" height="22" fill="#c0a070"/>
+              <polygon points="423,234 449,234 443,215 429,215" fill="#e8e0c8"/>
+              <ellipse cx="436" cy="234" rx="13" ry="4" fill="#d4c8a0" opacity="0.5"/>
+              <!-- Picture on wall -->
+              <rect x="115" y="100" width="70" height="55" fill="#8b7355"/>
+              <rect x="118" y="103" width="64" height="49" fill="#6a8fa0"/>
+              <ellipse cx="140" cy="120" rx="15" ry="15" fill="#f0c860" opacity="0.7"/>
+              <rect x="130" y="130" width="30" height="20" fill="#5a8a6a" opacity="0.8"/>
+              <!-- Rug -->
+              <ellipse cx="300" cy="310" rx="120" ry="18" fill="#8b4513" opacity="0.4"/>
+            </svg>
             <div class="slide-overlay">
-              <div class="scene-particles">
-                <div class="particle"></div><div class="particle"></div>
-                <div class="particle"></div><div class="particle"></div>
-              </div>
               <div class="scene-label-inner">
-                <div class="scene-icon">🌿</div>
+                <div class="scene-icon">🛏</div>
+                <span>Base Room (Starting Point)</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <div class="slide-before-after">
+              <span class="before-tag">Starting point</span>
+              <div class="slide-prompt">"A conventional bedroom with a double bed, two bedside lamps, wooden floor"</div>
+              <span class="arrow-down">↓</span>
+              <span class="after-tag">Then say...</span>
+              <div class="slide-prompt after-prompt">"Turn this into an Egyptian / forest / cyberpunk environment"</div>
+            </div>
+            <div class="slide-meta">
+              <span class="slide-time">⏱ 1.8s</span>
+              <span class="slide-engine">Unity HDRP</span>
+            </div>
+          </div>
+        </div>
                 <span>Bioluminescent Forest</span>
               </div>
             </div>
@@ -267,7 +713,7 @@
           <div class="step-icon">✍</div>
         </div>
         <h3>Write your prompt</h3>
-        <p>Describe your scene in plain language. Be specific or abstract — SYNTH3D understands both.</p>
+        <p>Describe your scene in plain language. Be specific or abstract — RenderAI understands both.</p>
         <div class="step-example">"A desert oasis at noon with palm trees, clear water, distant dunes"</div>
       </div>
       <div class="step-connector">→</div>
@@ -300,7 +746,7 @@
     <div class="section-header">
       <p class="section-tag">Capabilities</p>
       <h2>Built for creators</h2>
-      <p class="section-sub">Whether you're a solo dev, a studio, or a student — SYNTH3D adapts to your workflow.</p>
+      <p class="section-sub">Whether you're a solo dev, a studio, or a student — RenderAI adapts to your workflow.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card feature-card-large">
@@ -347,7 +793,7 @@
       <div class="cta-orb"></div>
       <p class="cta-tag">Early Access</p>
       <h2 class="cta-title">Ready to build your world?</h2>
-      <p class="cta-sub">Join thousands of creators already using SYNTH3D. The beta is free.</p>
+      <p class="cta-sub">Join thousands of creators already using RenderAI. The beta is free.</p>
       <a href="download.html" class="btn btn-primary btn-lg">Download for free</a>
       <p class="cta-note">Windows & macOS · No account required</p>
     </div>
@@ -357,7 +803,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo">SYNTH<span>3D</span></a>
+        <a href="index.html" class="nav-logo">Render<span>AI</span></a>
         <p>AI-powered 3D world generation, built on Unity.</p>
       </div>
       <div class="footer-links">
@@ -388,11 +834,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 SYNTH3D. All rights reserved.</p>
+      <p>© 2025 RenderAI. All rights reserved.</p>
     </div>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="supabase.js"></script>
+
   <script src="main.js"></script>
 </body>
 </html>
