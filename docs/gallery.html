@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — RenderAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="extra.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Render<span>AI</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="download.html" class="nav-cta">Download</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="download.html">Download</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1" style="opacity:0.1"></div>
+    </div>
+    <div class="page-hero-content">
+      <p class="section-tag">Gallery</p>
+      <h1>Worlds made with <span class="gradient-text">RenderAI</span></h1>
+      <p class="hero-sub" style="margin: 0 auto">Every scene was generated from a single text prompt. No manual modelling.</p>
+    </div>
+  </section>
+
+  <section style="background: var(--bg); padding-top: 0;">
+    <!-- Filter bar -->
+    <div class="gallery-filter">
+      <button class="gf-btn active" data-filter="all">All</button>
+      <button class="gf-btn" data-filter="stone">Stone</button>
+      <button class="gf-btn" data-filter="wood">Wood</button>
+      <button class="gf-btn" data-filter="ground">Ground</button>
+      <button class="gf-btn" data-filter="metal">Metal</button>
+      <button class="gf-btn" data-filter="fantasy">Fantasy</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+
+      <div class="gallery-card" data-tag="stone">
+        <div class="gallery-img">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+            <defs><pattern id="stone1" patternUnits="userSpaceOnUse" width="60" height="40"><rect width="60" height="40" fill="#6b6b6b"/><rect x="1" y="1" width="55" height="18" fill="#787878" rx="1"/><rect x="31" y="21" width="27" height="18" fill="#707070" rx="1"/><rect x="1" y="21" width="27" height="18" fill="#7a7a7a" rx="1"/></pattern></defs>
+            <rect width="400" height="300" fill="url(#stone1)"/>
+            <rect width="400" height="300" fill="rgba(0,0,0,0.15)"/>
+          </svg>
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"stone wall" → seamless 1024px texture applied to Unity cube</div>
+            <div class="gallery-tags"><span>Stone</span><span>SSIM 0.025</span><span>0.86s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card gallery-card-wide" data-tag="wood">
+        <div class="gallery-img">
+          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+            <defs><pattern id="wood1" patternUnits="userSpaceOnUse" width="40" height="300"><rect width="40" height="300" fill="#8B6340"/><rect x="1" width="38" height="300" fill="#9B7350"/><line x1="0" y1="0" x2="0" y2="300" stroke="#7a5530" stroke-width="2"/><line x1="40" y1="0" x2="40" y2="300" stroke="#7a5530" stroke-width="2"/><line x1="5" y1="60" x2="35" y2="65" stroke="#7a5530" stroke-width="0.5" opacity="0.5"/><line x1="5" y1="120" x2="35" y2="118" stroke="#7a5530" stroke-width="0.5" opacity="0.4"/><line x1="5" y1="180" x2="35" y2="183" stroke="#7a5530" stroke-width="0.5" opacity="0.5"/></pattern></defs>
+            <rect width="600" height="300" fill="url(#wood1)"/>
+            <rect width="600" height="300" fill="rgba(0,0,0,0.1)"/>
+          </svg>
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"wood texture" → best SSIM score (0.649) — parallel plank structure faithfully reproduced</div>
+            <div class="gallery-tags"><span>Wood</span><span>SSIM 0.649</span><span>0.82s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card" data-tag="ground">
+        <div class="gallery-img">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+            <defs><pattern id="grass1" patternUnits="userSpaceOnUse" width="40" height="40"><rect width="40" height="40" fill="#3a7d2c"/><ellipse cx="10" cy="10" rx="8" ry="5" fill="#4a8d3c" opacity="0.6"/><ellipse cx="30" cy="25" rx="7" ry="4" fill="#2d6a20" opacity="0.5"/><ellipse cx="20" cy="35" rx="9" ry="5" fill="#52963e" opacity="0.6"/><line x1="8" y1="12" x2="8" y2="5" stroke="#5aa040" stroke-width="1.5"/><line x1="15" y1="8" x2="13" y2="2" stroke="#4a9030" stroke-width="1.5"/><line x1="30" y1="22" x2="28" y2="15" stroke="#5aa040" stroke-width="1.5"/></pattern></defs>
+            <rect width="400" height="300" fill="url(#grass1)"/>
+          </svg>
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"grass ground top view seamless" → learned: vague prompts generate landscapes, not textures</div>
+            <div class="gallery-tags"><span>Ground</span><span>SSIM 0.173</span><span>0.87s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card" data-tag="metal">
+        <div class="gallery-img">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+            <defs>
+              <linearGradient id="metal-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8a8a8a"/><stop offset="50%" stop-color="#b0b0b0"/><stop offset="100%" stop-color="#787878"/></linearGradient>
+              <pattern id="metal1" patternUnits="userSpaceOnUse" width="80" height="80"><rect width="80" height="80" fill="url(#metal-grad)"/><rect x="0" y="0" width="80" height="2" fill="rgba(255,255,255,0.15)"/><rect x="0" y="20" width="80" height="1" fill="rgba(0,0,0,0.1)"/><rect x="0" y="40" width="80" height="2" fill="rgba(255,255,255,0.1)"/><rect x="0" y="60" width="80" height="1" fill="rgba(0,0,0,0.1)"/></pattern>
+            </defs>
+            <rect width="400" height="300" fill="url(#metal1)"/>
+            <rect width="400" height="300" fill="rgba(180,100,50,0.25)"/>
+            <rect width="400" height="300" fill="rgba(0,0,0,0.1)"/>
+          </svg>
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"metal enferrujado" (rusted metal) — one of the first textures generated in Marco 1</div>
+            <div class="gallery-tags"><span>Metal</span><span>Marco 1</span><span>~45s HF API</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card gallery-card-tall" data-tag="stone">
+        <div class="gallery-img">
+          <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+            <defs><pattern id="stone2" patternUnits="userSpaceOnUse" width="80" height="50"><rect width="80" height="50" fill="#5a5a5a"/><rect x="2" y="2" width="36" height="22" fill="#666" rx="1"/><rect x="42" y="2" width="36" height="22" fill="#636363" rx="1"/><rect x="22" y="26" width="36" height="22" fill="#5d5d5d" rx="1"/><rect x="2" y="26" width="18" height="22" fill="#606060" rx="1"/><rect x="60" y="26" width="18" height="22" fill="#686868" rx="1"/></pattern></defs>
+            <rect width="400" height="500" fill="url(#stone2)"/>
+            <rect width="400" height="500" fill="rgba(0,0,30,0.2)"/>
+          </svg>
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"brick wall" → seamless tileable, applied to Unity sphere with TextureWrapMode.Repeat</div>
+            <div class="gallery-tags"><span>Stone</span><span>Marco 2</span><span>0.91s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card" data-tag="wood">
+        <div class="gallery-img">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+            <defs><pattern id="wood2" patternUnits="userSpaceOnUse" width="300" height="40"><rect width="300" height="40" fill="#5c3010"/><rect x="2" y="2" width="296" height="36" fill="#6b3d18" rx="1"/><line x1="0" y1="40" x2="300" y2="40" stroke="#4a2808" stroke-width="2"/><line x1="60" y1="0" x2="62" y2="40" stroke="#4a2808" stroke-width="1" opacity="0.5"/><line x1="150" y1="0" x2="148" y2="40" stroke="#4a2808" stroke-width="1" opacity="0.4"/><line x1="240" y1="0" x2="242" y2="40" stroke="#4a2808" stroke-width="1" opacity="0.5"/></pattern></defs>
+            <rect width="400" height="300" fill="url(#wood2)"/>
+            <rect width="400" height="300" fill="rgba(0,0,0,0.12)"/>
+          </svg>
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"wood texture" applied to Unity plane — dark oak planks, horizontal grain</div>
+            <div class="gallery-tags"><span>Wood</span><span>Unity Plane</span><span>0.79s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card" data-tag="fantasy">
+        <div class="gallery-img">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+            <defs><pattern id="glow1" patternUnits="userSpaceOnUse" width="60" height="60"><rect width="60" height="60" fill="#001a0d"/><circle cx="15" cy="15" r="8" fill="#00cc66" opacity="0.3"/><circle cx="15" cy="15" r="4" fill="#00ff88" opacity="0.6"/><circle cx="45" cy="35" r="6" fill="#00bb55" opacity="0.3"/><circle cx="45" cy="35" r="3" fill="#44ffaa" opacity="0.7"/><circle cx="30" cy="50" r="5" fill="#009944" opacity="0.25"/><circle cx="30" cy="50" r="2" fill="#66ffbb" opacity="0.6"/></pattern></defs>
+            <rect width="400" height="300" fill="url(#glow1)"/>
+            <rect width="400" height="300" fill="rgba(0,30,15,0.4)"/>
+          </svg>
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"bioluminescent moss texture" — procedural glowing surface for fantasy environments</div>
+            <div class="gallery-tags"><span>Fantasy</span><span>Pollinations AI</span><span>0.93s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card gallery-card-wide" data-tag="ground">
+        <div class="gallery-img">
+          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+            <defs><pattern id="sand1" patternUnits="userSpaceOnUse" width="50" height="50"><rect width="50" height="50" fill="#c8a96e"/><ellipse cx="10" cy="15" rx="8" ry="3" fill="#d4b87a" opacity="0.5"/><ellipse cx="35" cy="35" rx="10" ry="4" fill="#bc9f64" opacity="0.4"/><ellipse cx="25" cy="5" rx="6" ry="2" fill="#d8bc80" opacity="0.6"/><rect x="20" y="22" width="12" height="6" rx="3" fill="#b89558" opacity="0.3"/></pattern></defs>
+            <rect width="600" height="300" fill="url(#sand1)"/>
+            <rect width="600" height="300" fill="rgba(0,0,0,0.08)"/>
+          </svg>
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"desert sand ground top view seamless" — natural terrain texture for 3D environments</div>
+            <div class="gallery-tags"><span>Ground</span><span>Top View</span><span>0.75s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card" data-tag="metal">
+        <div class="gallery-img">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+            <defs><pattern id="circuit1" patternUnits="userSpaceOnUse" width="80" height="80"><rect width="80" height="80" fill="#0a1a0a"/><rect x="10" y="10" width="20" height="20" fill="none" stroke="#00aa44" stroke-width="1" opacity="0.6"/><rect x="50" y="50" width="20" height="20" fill="none" stroke="#00aa44" stroke-width="1" opacity="0.6"/><line x1="20" y1="30" x2="20" y2="50" stroke="#00aa44" stroke-width="1" opacity="0.5"/><line x1="20" y1="50" x2="50" y2="50" stroke="#00aa44" stroke-width="1" opacity="0.5"/><circle cx="20" cy="50" r="3" fill="#00ff66" opacity="0.7"/><circle cx="50" cy="50" r="3" fill="#00ff66" opacity="0.7"/></pattern></defs>
+            <rect width="400" height="300" fill="url(#circuit1)"/>
+          </svg>
+          <div class="gallery-overlay">
+            <div class="gallery-prompt">"circuit board texture seamless" — sci-fi surface for futuristic 3D models</div>
+            <div class="gallery-tags"><span>Metal</span><span>Sci-Fi</span><span>0.84s</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-orb"></div>
+      <p class="cta-tag">Create your own</p>
+      <h2 class="cta-title">What world will you build?</h2>
+      <a href="download.html" class="btn btn-primary btn-lg">Download RenderAI</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><a href="index.html" class="nav-logo">Render<span>AI</span></a><p>AI-powered 3D world generation, built on Unity.</p></div>
+      <div class="footer-links">
+        <div class="footer-col"><h4>Product</h4><ul><li><a href="features.html">Features</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="download.html">Download</a></li></ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul><li><a href="docs.html">Documentation</a></li><li><a href="#">Changelog</a></li><li><a href="#">GitHub</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">Twitter / X</a></li><li><a href="#">Discord</a></li><li><a href="#">Contact</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 RenderAI. All rights reserved.</p></div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Gallery filter
+    const filterBtns = document.querySelectorAll('.gf-btn');
+    const cards      = document.querySelectorAll('.gallery-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(c => {
+          const show = f === 'all' || c.dataset.tag === f;
+          c.style.opacity = show ? '1' : '0.15';
+          c.style.transform = show ? '' : 'scale(0.97)';
+          c.style.pointerEvents = show ? '' : 'none';
+          c.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

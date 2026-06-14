@@ -117,13 +117,29 @@
 
     <!-- Changelog teaser -->
     <div style="max-width: 700px; margin: 60px auto 0; padding: 0 24px;">
-      <h2 style="font-family: var(--font-display); font-size:1.3rem; margin-bottom:20px;">Changelog · v0.8.2</h2>
+      <h2 style="font-family: var(--font-display); font-size:1.3rem; margin-bottom:20px;">What's included</h2>
       <ul class="docs-list docs-list-bullet">
-        <li>Added glTF/glb export format</li>
-        <li>Improved prompt parsing for spatial relationships</li>
-        <li>Fixed lighting artifacts in HDRP scenes</li>
-        <li>Reduced average generation time by 18%</li>
-        <li>macOS Apple Silicon native support</li>
+        <li><strong>servidor.py</strong> — Python/Flask server with Pollinations AI integration and latency logging</li>
+        <li><strong>AplicarTextura.cs</strong> — Unity C# script (drop onto any 3D object)</li>
+        <li><strong>Unity sample scene</strong> — Cube, Sphere, and Plane with pre-configured textures</li>
+        <li>Requirements: Python 3.10+, Unity 6 Universal 3D, internet connection</li>
+      </ul>
+
+      <h2 style="font-family: var(--font-display); font-size:1.3rem; margin-bottom:20px; margin-top: 48px;">Changelog · Marco 4 (May 2026)</h2>
+      <ul class="docs-list docs-list-bullet">
+        <li>Added SSIM quality benchmark suite (stone, wood, grass)</li>
+        <li>Flask server latency measurement system (per-request logging)</li>
+        <li>9-run performance benchmark — avg 0.842s end-to-end</li>
+        <li>Improved error handling with detailed HTTP status logging</li>
+      </ul>
+
+      <h2 style="font-family: var(--font-display); font-size:1.3rem; margin-bottom:20px; margin-top: 48px;">Changelog · Marco 3 (April 2026)</h2>
+      <ul class="docs-list docs-list-bullet">
+        <li>Migrated from Hugging Face API to Pollinations AI (10–60s → &lt;1s)</li>
+        <li>TextureWrapMode.Repeat for seamless tiling</li>
+        <li>FilterMode.Bilinear for smooth rendering</li>
+        <li>Loading flag prevents duplicate generation calls</li>
+        <li>120s timeout to prevent Unity hangs</li>
       </ul>
     </div>
   </section>
@@ -137,7 +153,7 @@
         <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">Twitter / X</a></li><li><a href="#">Discord</a></li><li><a href="#">Contact</a></li></ul></div>
       </div>
     </div>
-    <div class="footer-bottom"><p>© 2025 RenderAI. All rights reserved.</p></div>
+    <div class="footer-bottom"><p>© 2026 RenderAI. All rights reserved.</p></div>
   </footer>
 
   <script src="main.js"></script>

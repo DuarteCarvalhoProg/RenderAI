@@ -26,11 +26,11 @@ mobileMenu.querySelectorAll('a').forEach(a => {
 const outputEl = document.getElementById('terminalOutput');
 const preview  = document.getElementById('renderPreview');
 const lines = [
-  '▸ Parsing prompt...',
-  '▸ Building scene graph...',
-  '▸ Applying materials & lighting...',
-  '▸ Rendering in Unity HDRP...',
-  '✔ Scene ready! (2.9s)',
+  '▸ Preprocessing prompt...',
+  '▸ Enriching with seamless, 4k, tileable...',
+  '▸ Calling Pollinations AI...',
+  '▸ Applying texture to Unity object...',
+  '✔ Texture ready! (0.84s)',
 ];
 
 function typeLines(lines, el, delay = 400) {

@@ -64,9 +64,9 @@
         <a href="gallery.html" class="btn btn-ghost">See Gallery ↗</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Worlds possible</span></div>
+        <div class="stat"><span class="stat-num">&lt;1s</span><span class="stat-label">Generation time</span></div>
         <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">&lt;5s</span><span class="stat-label">Generation time</span></div>
+        <div class="stat"><span class="stat-num">1024px</span><span class="stat-label">Texture resolution</span></div>
         <div class="stat-divider"></div>
         <div class="stat"><span class="stat-num">Unity</span><span class="stat-label">Real-time engine</span></div>
       </div>
@@ -102,23 +102,23 @@
     <div class="strip-inner">
       <div class="strip-item">
         <div class="strip-icon">✦</div>
-        <span>Natural language input</span>
+        <span>Text prompt → seamless texture</span>
       </div>
       <div class="strip-item">
         <div class="strip-icon">✦</div>
-        <span>Real-time Unity rendering</span>
+        <span>Pollinations AI · &lt;1s generation</span>
       </div>
       <div class="strip-item">
         <div class="strip-icon">✦</div>
-        <span>Export-ready assets</span>
+        <span>1024×1024 px · 4K quality</span>
       </div>
       <div class="strip-item">
         <div class="strip-icon">✦</div>
-        <span>AI lighting & atmosphere</span>
+        <span>Unity 6 · URP real-time rendering</span>
       </div>
       <div class="strip-item">
         <div class="strip-icon">✦</div>
-        <span>Iterate with follow-up prompts</span>
+        <span>Tileable · seamless · PBR-ready</span>
       </div>
     </div>
   </section>
@@ -661,7 +661,13 @@
             </div>
           </div>
           <div class="slide-info">
-            <div class="slide-prompt">"A deep forest at night where plants glow with soft blue-green bioluminescence, misty air"</div>
+            <div class="slide-before-after">
+              <span class="before-tag">Base prompt</span>
+              <div class="slide-prompt">"A conventional bedroom"</div>
+              <span class="arrow-down">↓</span>
+              <span class="after-tag">Follow-up</span>
+              <div class="slide-prompt after-prompt">"Turn this into a bioluminescent forest at night"</div>
+            </div>
             <div class="slide-meta">
               <span class="slide-time">⏱ 5.1s</span>
               <span class="slide-engine">Unity HDRP</span>
@@ -670,12 +676,43 @@
         </div>
 
         <div class="slide">
-          <div class="slide-img" style="background: linear-gradient(135deg, #00111a 0%, #002233 30%, #004466 55%, #0077aa 80%, #55ccff 100%);">
+          <div class="slide-img">
+            <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+              <defs>
+                <linearGradient id="uw-bg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#00111a"/>
+                  <stop offset="100%" stop-color="#002233"/>
+                </linearGradient>
+                <linearGradient id="uw-light" x1="0.5" y1="0" x2="0.5" y2="1">
+                  <stop offset="0%" stop-color="#55ccff" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#55ccff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#uw-bg)"/>
+              <rect x="60" y="40" width="480" height="260" fill="#001828" opacity="0.9"/>
+              <polygon points="200,0 260,0 310,360 240,360" fill="url(#uw-light)"/>
+              <polygon points="330,0 380,0 420,360 370,360" fill="url(#uw-light)"/>
+              <path d="M80,200 Q80,140 130,140 Q180,140 180,200" fill="none" stroke="#335566" stroke-width="8"/>
+              <rect x="78" y="200" width="8" height="100" fill="#335566"/>
+              <rect x="174" y="200" width="8" height="100" fill="#335566"/>
+              <path d="M400,190 Q400,130 455,130 Q510,130 510,190" fill="none" stroke="#335566" stroke-width="8"/>
+              <rect x="398" y="190" width="8" height="110" fill="#335566"/>
+              <rect x="504" y="190" width="8" height="110" fill="#335566"/>
+              <rect x="0" y="300" width="600" height="60" fill="#001020"/>
+              <rect x="100" y="295" width="60" height="20" rx="4" fill="#223344" opacity="0.8"/>
+              <rect x="350" y="290" width="80" height="25" rx="5" fill="#223344" opacity="0.7"/>
+              <path d="M150,300 Q145,270 150,250 Q155,230 148,210" stroke="#cc4488" stroke-width="4" fill="none"/>
+              <circle cx="148" cy="210" r="8" fill="#dd5599" opacity="0.8"/>
+              <path d="M450,300 Q448,268 453,248 Q458,228 450,205" stroke="#ff6633" stroke-width="3" fill="none"/>
+              <circle cx="450" cy="205" r="6" fill="#ff7744" opacity="0.8"/>
+              <circle cx="220" cy="180" r="5" fill="none" stroke="#55ccff" stroke-width="1" opacity="0.5"/>
+              <circle cx="235" cy="140" r="3" fill="none" stroke="#55ccff" stroke-width="1" opacity="0.4"/>
+              <circle cx="370" cy="160" r="4" fill="none" stroke="#55ccff" stroke-width="1" opacity="0.45"/>
+              <circle cx="300" cy="200" r="6" fill="none" stroke="#77ddff" stroke-width="1" opacity="0.3"/>
+              <path d="M300,300 Q295,270 305,250 Q295,230 300,200" stroke="#226644" stroke-width="5" fill="none"/>
+              <path d="M310,300 Q318,272 308,255 Q318,238 308,210" stroke="#2a7755" stroke-width="4" fill="none"/>
+            </svg>
             <div class="slide-overlay">
-              <div class="scene-particles">
-                <div class="particle"></div><div class="particle"></div>
-                <div class="particle"></div><div class="particle"></div>
-              </div>
               <div class="scene-label-inner">
                 <div class="scene-icon">🌊</div>
                 <span>Underwater Ruins</span>
@@ -683,7 +720,13 @@
             </div>
           </div>
           <div class="slide-info">
-            <div class="slide-prompt">"Ancient sunken ruins deep underwater, shafts of light through the water, coral growth"</div>
+            <div class="slide-before-after">
+              <span class="before-tag">Base prompt</span>
+              <div class="slide-prompt">"A conventional bedroom"</div>
+              <span class="arrow-down">↓</span>
+              <span class="after-tag">Follow-up</span>
+              <div class="slide-prompt after-prompt">"Submerge this into ancient sunken ruins, coral and shafts of light"</div>
+            </div>
             <div class="slide-meta">
               <span class="slide-time">⏱ 3.7s</span>
               <span class="slide-engine">Unity URP</span>
@@ -703,40 +746,41 @@
   <!-- HOW IT WORKS -->
   <section class="how-section">
     <div class="section-header">
-      <p class="section-tag">Workflow</p>
-      <h2>Three steps to a 3D world</h2>
+      <p class="section-tag">Pipeline</p>
+      <h2>From prompt to 3D texture in 4 steps</h2>
+      <p class="section-sub">RenderAI connects your words to Unity through a Flask server and the Pollinations AI engine — all in under a second.</p>
     </div>
-    <div class="steps-grid">
+    <div class="steps-grid steps-grid-4">
       <div class="step-card">
         <div class="step-num">01</div>
-        <div class="step-icon-wrap">
-          <div class="step-icon">✍</div>
-        </div>
+        <div class="step-icon-wrap"><div class="step-icon">✍</div></div>
         <h3>Write your prompt</h3>
-        <p>Describe your scene in plain language. Be specific or abstract — RenderAI understands both.</p>
-        <div class="step-example">"A desert oasis at noon with palm trees, clear water, distant dunes"</div>
+        <p>Type a texture description in plain language directly in the Unity Inspector or GUI. RenderAI automatically enriches it with <em>seamless, 4k, tileable</em> keywords.</p>
+        <div class="step-example">"brick wall" → "brick wall, seamless texture, high quality, 4k, tileable"</div>
       </div>
       <div class="step-connector">→</div>
       <div class="step-card">
         <div class="step-num">02</div>
-        <div class="step-icon-wrap">
-          <div class="step-icon">⚡</div>
-        </div>
-        <h3>AI generates the scene</h3>
-        <p>Our AI interprets your prompt, builds geometry, applies materials, places objects and sets lighting — all automatically.</p>
-        <div class="step-bar">
-          <div class="step-bar-fill"></div>
-        </div>
+        <div class="step-icon-wrap"><div class="step-icon">⚙️</div></div>
+        <h3>Flask server processes</h3>
+        <p>Unity sends an HTTP POST to a local Python/Flask server. The server builds a Pollinations AI URL with your prompt, resolution and seed parameters.</p>
+        <div class="step-bar"><div class="step-bar-fill"></div></div>
       </div>
       <div class="step-connector">→</div>
       <div class="step-card">
         <div class="step-num">03</div>
-        <div class="step-icon-wrap">
-          <div class="step-icon">🎮</div>
-        </div>
-        <h3>Explore & export</h3>
-        <p>Walk through your scene in Unity, refine with follow-up prompts, then export assets for your project.</p>
-        <a href="features.html" class="step-link">See export options →</a>
+        <div class="step-icon-wrap"><div class="step-icon">🤖</div></div>
+        <h3>AI generates texture</h3>
+        <p>Pollinations AI generates a 1024×1024 px seamless texture via Stable Diffusion in under 1 second. The Flask server resizes, converts to RGB and returns PNG.</p>
+        <div class="step-bar"><div class="step-bar-fill" style="animation-delay:0.3s"></div></div>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-icon-wrap"><div class="step-icon">🎮</div></div>
+        <h3>Applied in Unity</h3>
+        <p>The C# script receives the PNG, creates a Texture2D with <em>TextureWrapMode.Repeat</em> for seamless tiling, and applies it to the object's material — all asynchronously.</p>
+        <a href="docs.html" class="step-link">Read the docs →</a>
       </div>
     </div>
   </section>
@@ -787,6 +831,43 @@
     </div>
   </section>
 
+  <!-- PERFORMANCE METRICS -->
+  <section class="perf-section">
+    <div class="section-header">
+      <p class="section-tag">Benchmark · Marco 4</p>
+      <h2>Tested. Measured. Fast.</h2>
+      <p class="section-sub">Latency measured over 9 real generations across 3 texture types (stone, wood, grass).</p>
+    </div>
+    <div class="perf-grid">
+      <div class="perf-card">
+        <div class="perf-num">0.84<span class="perf-unit">s</span></div>
+        <div class="perf-label">Average total latency</div>
+        <div class="perf-sub">min 0.745s · max 0.930s</div>
+      </div>
+      <div class="perf-card">
+        <div class="perf-num">83<span class="perf-unit">%</span></div>
+        <div class="perf-label">Time spent in AI generation</div>
+        <div class="perf-sub">avg 0.702s · Pollinations AI</div>
+      </div>
+      <div class="perf-card">
+        <div class="perf-num">1024<span class="perf-unit">px</span></div>
+        <div class="perf-label">Output texture resolution</div>
+        <div class="perf-sub">LANCZOS resampling · RGB PNG</div>
+      </div>
+      <div class="perf-card">
+        <div class="perf-num">0.649</div>
+        <div class="perf-label">Best SSIM quality score</div>
+        <div class="perf-sub">Wood texture vs Polyhaven reference</div>
+      </div>
+    </div>
+    <div class="perf-bar-wrap">
+      <div class="perf-bar-label">AI Generation <span>83%</span></div>
+      <div class="perf-bar-track"><div class="perf-bar-fill" style="width:83%; background: var(--accent);"></div></div>
+      <div class="perf-bar-label">Post-processing <span>17%</span></div>
+      <div class="perf-bar-track"><div class="perf-bar-fill" style="width:17%; background: #4ade80;"></div></div>
+    </div>
+  </section>
+
   <!-- CTA BANNER -->
   <section class="cta-section">
     <div class="cta-inner">
@@ -834,7 +915,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 RenderAI. All rights reserved.</p>
+      <p>© 2026 RenderAI. All rights reserved.</p>
     </div>
   </footer>
 

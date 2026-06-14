@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — RenderAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="extra.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Render<span>AI</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html" class="active">Features</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="download.html" class="nav-cta">Download</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="download.html">Download</a></li>
+    </ul>
+  </div>
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1" style="opacity:0.1"></div>
+      <div class="orb orb-2" style="opacity:0.07"></div>
+    </div>
+    <div class="page-hero-content">
+      <p class="section-tag">Capabilities</p>
+      <h1>Everything you need to<br /><span class="gradient-text">build 3D worlds with AI</span></h1>
+      <p class="hero-sub" style="margin:0 auto">From first prompt to finished scene — RenderAI handles the full pipeline so you can focus on your vision.</p>
+    </div>
+  </section>
+
+  <!-- Features detail -->
+  <section style="background: var(--bg);">
+    <div class="features-detail-grid">
+
+      <div class="feature-detail-row">
+        <div class="fd-text">
+          <div class="feature-tag">Core Engine</div>
+          <h2>Text prompt → seamless texture</h2>
+          <p>Type any material description and RenderAI generates a 1024×1024 px seamless, tileable texture powered by Stable Diffusion via Pollinations AI — directly inside Unity, in under 1 second.</p>
+          <ul class="fd-list">
+            <li>✦ Prompt auto-enriched with <em>seamless, high quality, 4k, tileable</em></li>
+            <li>✦ 1024×1024 px output, LANCZOS resampled</li>
+            <li>✦ TextureWrapMode.Repeat for seamless tiling on any surface</li>
+            <li>✦ Applied asynchronously — zero frame drops</li>
+          </ul>
+        </div>
+        <div class="fd-visual fd-visual-code">
+          <div class="terminal-window" style="max-width: 100%;">
+            <div class="terminal-bar">
+              <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+              <span class="t-title">renderai — flask server</span>
+            </div>
+            <div class="terminal-body" style="color: var(--text-2); line-height: 1.9;">
+              <div style="color: var(--accent); margin-bottom:8px;">POST /gerar-textura</div>
+              <div style="color: var(--text);">{ "descricao": "stone wall",<br/>&nbsp;&nbsp;"resolucao": 1024, "seed": 42 }</div>
+              <br/>
+              <div style="color: #4ade80;">▸ Prompt enriched with keywords</div>
+              <div style="color: #4ade80;">▸ Pollinations AI: 0.707s</div>
+              <div style="color: #4ade80;">▸ Post-processing: 0.157s</div>
+              <div style="color: #4ade80;">✔ PNG returned in 0.864s</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-detail-row feature-detail-row-reverse">
+        <div class="fd-text">
+          <div class="feature-tag">Reproducibility</div>
+          <h2>Consistent results with seed control</h2>
+          <p>Every generation is controlled by a seed parameter. Use the same seed and prompt to reproduce the exact same texture — essential for consistent environments across multiple Unity scenes or sessions.</p>
+          <ul class="fd-list">
+            <li>✦ Default seed: 42 (always reproducible)</li>
+            <li>✦ Change seed to explore variations</li>
+            <li>✦ Parameters: seed, steps (1–50), guidance_scale (5–12)</li>
+            <li>✦ All parameters configurable in Unity Inspector</li>
+          </ul>
+        </div>
+        <div class="fd-visual" style="background: linear-gradient(135deg, #0a0a1a, #1a1a40); border-radius: var(--radius-lg); border: 1px solid var(--border-hi); min-height: 280px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; padding: 32px;">
+          <div style="font-size:2rem;">🌱</div>
+          <div style="font-family: var(--font-display); font-weight:700; color:var(--text);">Same seed = Same texture</div>
+          <div style="color: var(--text-3); font-size: 0.85rem; text-align:center;">Reproducible generation for consistent 3D environments</div>
+          <div style="background:rgba(124,109,250,0.1); border:1px solid rgba(124,109,250,0.25); border-radius:8px; padding:12px 20px; font-family:monospace; font-size:0.85rem; color:var(--accent);">seed=42 · steps=30 · guidance=7.5</div>
+        </div>
+      </div>
+
+      <div class="feature-detail-row">
+        <div class="fd-text">
+          <div class="feature-tag">Performance</div>
+          <h2>Sub-second texture generation</h2>
+          <p>Tested across 9 real executions, RenderAI achieves an average of 0.842 seconds end-to-end — from Unity request to texture applied. No GPU required; all generation happens in the cloud via Pollinations AI.</p>
+          <ul class="fd-list">
+            <li>✦ Avg AI generation: 0.702s (83% of total)</li>
+            <li>✦ Avg post-processing: 0.140s (17% of total)</li>
+            <li>✦ Min total: 0.745s · Max: 0.930s</li>
+            <li>✦ Consistent across texture types (stone, wood, grass)</li>
+          </ul>
+        </div>
+        <div class="fd-visual" style="background: linear-gradient(135deg, #0d1f0d, #1a4020); border-radius: var(--radius-lg); border: 1px solid var(--border-hi); min-height: 280px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; padding: 32px;">
+          <div style="width:100%; max-width:280px;">
+            <div style="display:flex; justify-content:space-between; color:var(--text-2); font-size:0.82rem; margin-bottom:6px;"><span>AI Generation</span><span style="color:#4ade80;">83%</span></div>
+            <div style="background:rgba(0,0,0,0.3); border-radius:100px; height:10px; overflow:hidden; margin-bottom:14px;"><div style="width:83%; height:100%; background:#4ade80; border-radius:100px;"></div></div>
+            <div style="display:flex; justify-content:space-between; color:var(--text-2); font-size:0.82rem; margin-bottom:6px;"><span>Post-processing</span><span style="color:var(--accent);">17%</span></div>
+            <div style="background:rgba(0,0,0,0.3); border-radius:100px; height:10px; overflow:hidden;"><div style="width:17%; height:100%; background:var(--accent); border-radius:100px;"></div></div>
+            <div style="text-align:center; margin-top:20px; font-family:var(--font-display); font-size:1.6rem; font-weight:800; color:#4ade80;">0.842s <span style="font-size:0.9rem; color:var(--text-3);">average</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-detail-row feature-detail-row-reverse">
+        <div class="fd-text">
+          <div class="feature-tag">Unity Integration</div>
+          <h2>Native Unity workflow</h2>
+          <p>RenderAI integrates directly into the Unity Inspector. No external tools, no window switching — just type a description, click Play, and the texture appears on your object in real time.</p>
+          <ul class="fd-list">
+            <li>✦ Unity 6 compatible (Universal Render Pipeline)</li>
+            <li>✦ Works on any primitive or custom mesh with UVs</li>
+            <li>✦ Supports Cube, Sphere, Plane and any UV-mapped object</li>
+            <li>✦ Call <code>GerarTextura()</code> from any other C# script</li>
+          </ul>
+        </div>
+        <div class="fd-visual" style="background: linear-gradient(135deg, #1f0d0d, #401a1a); border-radius: var(--radius-lg); border: 1px solid var(--border-hi); min-height: 280px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; padding: 32px;">
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <span style="background:rgba(248,113,113,0.1); border:1px solid rgba(248,113,113,0.25); color:#f87171; padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;">Unity 6</span>
+            <span style="background:rgba(248,113,113,0.1); border:1px solid rgba(248,113,113,0.25); color:#f87171; padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;">URP</span>
+            <span style="background:rgba(248,113,113,0.1); border:1px solid rgba(248,113,113,0.25); color:#f87171; padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;">C#</span>
+            <span style="background:rgba(248,113,113,0.1); border:1px solid rgba(248,113,113,0.25); color:#f87171; padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;">Python/Flask</span>
+            <span style="background:rgba(248,113,113,0.1); border:1px solid rgba(248,113,113,0.25); color:#f87171; padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;">Pollinations AI</span>
+            <span style="background:rgba(248,113,113,0.1); border:1px solid rgba(248,113,113,0.25); color:#f87171; padding:8px 16px; border-radius:100px; font-size:0.82rem; font-weight:600;">Stable Diffusion</span>
+          </div>
+          <div style="color: var(--text-3); font-size: 0.82rem; text-align:center; margin-top:8px;">Full open-source stack · No paid API required</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-orb"></div>
+      <p class="cta-tag">Early Access</p>
+      <h2 class="cta-title">Start building for free</h2>
+      <p class="cta-sub">The beta is open. No account, no credit card.</p>
+      <a href="download.html" class="btn btn-primary btn-lg">Download RenderAI</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Render<span>AI</span></a>
+        <p>AI-powered 3D world generation, built on Unity.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul><li><a href="features.html">Features</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="download.html">Download</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul><li><a href="docs.html">Documentation</a></li><li><a href="#">Changelog</a></li><li><a href="#">GitHub</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul><li><a href="#">Twitter / X</a></li><li><a href="#">Discord</a></li><li><a href="#">Contact</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 RenderAI. All rights reserved.</p></div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation — RenderAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="extra.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Render<span>AI</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="docs.html" class="active">Docs</a></li>
+        <li><a href="download.html" class="nav-cta">Download</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="download.html">Download</a></li>
+    </ul>
+  </div>
+
+  <div class="docs-layout">
+    <!-- Sidebar -->
+    <aside class="docs-sidebar">
+      <div class="docs-sidebar-inner">
+        <div class="docs-sidebar-section">
+          <p class="docs-sidebar-title">Getting Started</p>
+          <ul>
+            <li><a href="#install" class="docs-nav-link active">Installation</a></li>
+            <li><a href="#quickstart" class="docs-nav-link">Quick start</a></li>
+            <li><a href="#requirements" class="docs-nav-link">System requirements</a></li>
+          </ul>
+        </div>
+        <div class="docs-sidebar-section">
+          <p class="docs-sidebar-title">Architecture</p>
+          <ul>
+            <li><a href="#architecture" class="docs-nav-link">System overview</a></li>
+            <li><a href="#flask-server" class="docs-nav-link">Flask server</a></li>
+            <li><a href="#unity-script" class="docs-nav-link">Unity C# script</a></li>
+          </ul>
+        </div>
+        <div class="docs-sidebar-section">
+          <p class="docs-sidebar-title">Prompting</p>
+          <ul>
+            <li><a href="#prompt-basics" class="docs-nav-link">Prompt basics</a></li>
+            <li><a href="#preprocessing" class="docs-nav-link">Auto-enrichment</a></li>
+            <li><a href="#parameters" class="docs-nav-link">Model parameters</a></li>
+          </ul>
+        </div>
+        <div class="docs-sidebar-section">
+          <p class="docs-sidebar-title">Reference</p>
+          <ul>
+            <li><a href="#performance" class="docs-nav-link">Performance</a></li>
+            <li><a href="#faq" class="docs-nav-link">FAQ</a></li>
+            <li><a href="#changelog" class="docs-nav-link">Changelog</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="docs-main">
+      <div class="docs-content">
+
+        <div class="docs-breadcrumb">Documentation</div>
+
+        <section id="install" class="docs-section">
+          <h1>Getting Started</h1>
+          <p class="docs-lead">Welcome to RenderAI — a system that generates seamless AI textures from text descriptions and applies them to 3D objects in Unity in real time.</p>
+
+          <h2>Installation</h2>
+          <p>RenderAI consists of two components: a Python/Flask server and a Unity project. Both must be running simultaneously.</p>
+
+          <div class="docs-callout">
+            <div class="docs-callout-icon">ℹ</div>
+            <div>
+              <strong>Prerequisites:</strong> Python 3.10+, Unity 6 (Universal 3D), and an internet connection for the Pollinations AI API.
+            </div>
+          </div>
+
+          <h3>1 — Flask server setup</h3>
+          <div class="docs-code-block">
+            <div class="docs-code-header"><span>bash</span><button class="docs-copy-btn" onclick="copyCode(this, 'pip install flask requests pillow\npython servidor.py')">Copy</button></div>
+            <pre><code>pip install flask requests pillow
+python servidor.py</code></pre>
+          </div>
+          <p>The server starts on <code>http://localhost:5000</code> by default. You should see:</p>
+          <div class="docs-code-block">
+            <div class="docs-code-header"><span>output</span></div>
+            <pre><code> * Running on http://127.0.0.1:5000
+ * Debug mode: on</code></pre>
+          </div>
+
+          <h3>2 — Unity project setup</h3>
+          <ol class="docs-list">
+            <li>Open Unity 6 and create a new <strong>Universal 3D</strong> project</li>
+            <li>Add the <code>AplicarTextura.cs</code> script to any 3D object in your scene</li>
+            <li>In the Inspector, fill in the <strong>Descricao</strong> field with your texture prompt</li>
+            <li>Enable <strong>Gerar Ao Iniciar</strong> to generate automatically on Play, or call <code>GerarTextura()</code> manually</li>
+            <li>Press Play — the texture will appear on the object within ~1 second</li>
+          </ol>
+        </section>
+
+        <section id="quickstart" class="docs-section">
+          <h2>Quick start</h2>
+          <p>With both the Flask server and Unity running, add the script to a cube and set a description:</p>
+          <div class="docs-code-block">
+            <div class="docs-code-header"><span>Example descriptions</span></div>
+            <pre><code>stone wall
+wood planks
+grass field top view seamless
+rusted metal plate
+cracked concrete</code></pre>
+          </div>
+          <p>RenderAI automatically appends <code>, seamless texture, high quality, 4k, tileable</code> to every prompt before sending it to the AI. You don't need to include these manually.</p>
+
+          <div class="docs-callout" style="border-color: rgba(74,222,128,0.3); background: rgba(74,222,128,0.05);">
+            <div class="docs-callout-icon" style="color:#4ade80;">✔</div>
+            <div>
+              <strong>Tip:</strong> For best results, describe the material, not the scene. "brick wall" works better than "a wall in a building". See <a href="#prompt-basics" style="color:var(--accent);">Prompt basics</a> for more examples.
+            </div>
+          </div>
+        </section>
+
+        <section id="requirements" class="docs-section">
+          <h2>System requirements</h2>
+          <div class="docs-table-wrap">
+            <table class="docs-table">
+              <thead>
+                <tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>OS</td><td>Windows 10 / macOS 12</td><td>Windows 11 / macOS 14</td></tr>
+                <tr><td>Python</td><td>3.10</td><td>3.11+</td></tr>
+                <tr><td>RAM</td><td>8 GB</td><td>16 GB+</td></tr>
+                <tr><td>Internet</td><td>Required (Pollinations AI)</td><td>Stable broadband</td></tr>
+                <tr><td>Unity</td><td>Unity 6 (Universal 3D)</td><td>Unity 6 LTS</td></tr>
+                <tr><td>GPU</td><td>Not required (cloud AI)</td><td>Any for real-time rendering</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="docs-callout" style="margin-top:16px;">
+            <div class="docs-callout-icon">ℹ</div>
+            <div>Unlike local Stable Diffusion setups, RenderAI uses Pollinations AI's cloud API — no GPU is needed for texture generation. A GPU is still useful for Unity rendering quality.</div>
+          </div>
+        </section>
+
+        <section id="architecture" class="docs-section">
+          <h2>System architecture</h2>
+          <p>RenderAI follows a 3-layer architecture:</p>
+          <div class="docs-arch">
+            <div class="arch-layer">
+              <div class="arch-label">Unity / C#</div>
+              <div class="arch-desc">User writes a description in the Inspector or GUI. The <code>AplicarTextura.cs</code> script sends an HTTP POST with the prompt and parameters to the local Flask server.</div>
+            </div>
+            <div class="arch-arrow">↓ HTTP POST (JSON)</div>
+            <div class="arch-layer">
+              <div class="arch-label">Flask Server / Python</div>
+              <div class="arch-desc">Receives the request, enriches the prompt, builds a Pollinations AI URL with <code>width</code>, <code>height</code>, and <code>seed</code> parameters, fetches the image, resizes to target resolution, converts to RGB, and returns PNG bytes.</div>
+            </div>
+            <div class="arch-arrow">↓ GET image.pollinations.ai</div>
+            <div class="arch-layer">
+              <div class="arch-label">Pollinations AI</div>
+              <div class="arch-desc">Free, no-quota image generation API powered by Stable Diffusion. Responds in avg 0.7s with a JPEG/PNG image at the requested resolution.</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="flask-server" class="docs-section">
+          <h2>Flask server</h2>
+          <p>The server (<code>servidor.py</code>) exposes a single POST endpoint at <code>/gerar-textura</code>.</p>
+
+          <h3>Request body</h3>
+          <div class="docs-code-block">
+            <div class="docs-code-header"><span>JSON</span></div>
+            <pre><code>{
+  "descricao": "stone wall",
+  "resolucao": 1024,
+  "seed": 42,
+  "steps": 30,
+  "guidance_scale": 7.5
+}</code></pre>
+          </div>
+
+          <h3>Response</h3>
+          <p>Returns a <code>image/png</code> binary stream — the generated texture ready to load as a Unity Texture2D.</p>
+
+          <h3>Prompt enrichment</h3>
+          <p>The server appends quality keywords automatically unless they're already present:</p>
+          <div class="docs-code-block">
+            <div class="docs-code-header"><span>Python</span></div>
+            <pre><code>keywords = ", seamless texture, high quality, 4k, tileable"
+if "seamless" not in descricao.lower():
+    descricao_enriquecida = descricao + keywords</code></pre>
+          </div>
+
+          <h3>Error handling</h3>
+          <p>The server includes a global try/except with detailed logging, a 120-second timeout, and descriptive error messages returned to Unity if generation fails.</p>
+        </section>
+
+        <section id="unity-script" class="docs-section">
+          <h2>Unity C# script — AplicarTextura.cs</h2>
+          <p>The script runs on any GameObject with a Renderer component. It uses Unity Coroutines to fetch and apply textures without blocking the main render thread.</p>
+
+          <h3>Inspector fields</h3>
+          <div class="docs-table-wrap">
+            <table class="docs-table">
+              <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td>Descricao</td><td>string</td><td>Texture prompt (e.g. "stone wall")</td></tr>
+                <tr><td>Resolucao</td><td>int</td><td>Output resolution in px (default: 1024)</td></tr>
+                <tr><td>Gerar Ao Iniciar</td><td>bool</td><td>Generate automatically on Play</td></tr>
+                <tr><td>Seed</td><td>int</td><td>Randomness seed (same seed → same texture)</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Key implementation details</h3>
+          <ul class="docs-list docs-list-bullet">
+            <li><strong>TextureWrapMode.Repeat</strong> — ensures seamless tiling on all surfaces</li>
+            <li><strong>FilterMode.Bilinear</strong> — smooth texture at all camera angles</li>
+            <li><strong>estaCarregando flag</strong> — prevents duplicate requests during generation</li>
+            <li><strong>120s timeout</strong> — avoids Unity hanging if the server is unreachable</li>
+            <li><strong>JsonUtility serialization</strong> — safe handling of special characters in prompts</li>
+          </ul>
+
+          <div class="docs-code-block">
+            <div class="docs-code-header"><span>C# — calling from code</span></div>
+            <pre><code>// Get the component and generate a new texture at runtime
+AplicarTextura at = cube.GetComponent&lt;AplicarTextura&gt;();
+at.descricao = "rusted iron plate";
+at.GerarTextura();</code></pre>
+          </div>
+        </section>
+
+        <section id="prompt-basics" class="docs-section">
+          <h2>Prompt basics</h2>
+          <p>RenderAI is optimised for <strong>material/texture descriptions</strong> — not scene descriptions. Think of what the surface looks like, not what object it's on.</p>
+
+          <div class="docs-table-wrap">
+            <table class="docs-table">
+              <thead><tr><th>Good prompts ✔</th><th>Less effective ✗</th></tr></thead>
+              <tbody>
+                <tr><td>stone wall</td><td>a building with stone</td></tr>
+                <tr><td>wood planks, dark oak</td><td>a wooden floor in a house</td></tr>
+                <tr><td>grass ground top view</td><td>a garden scene</td></tr>
+                <tr><td>cracked concrete, weathered</td><td>a broken pavement</td></tr>
+                <tr><td>rusted metal plate, orange</td><td>an old car door</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="docs-callout" style="margin-top: 20px;">
+            <div class="docs-callout-icon">⚠</div>
+            <div>
+              <strong>Top-view textures:</strong> For floor textures (grass, dirt, sand), add <em>"top view"</em> to your prompt. Without it, the AI may generate a landscape with sky instead of a seamless surface.
+              <br/><br/>
+              ✗ "grass field" → generates a landscape<br/>
+              ✔ "grass ground top view seamless" → generates a tileable texture
+            </div>
+          </div>
+        </section>
+
+        <section id="preprocessing" class="docs-section">
+          <h2>Automatic prompt enrichment</h2>
+          <p>RenderAI automatically adds quality keywords to every prompt to improve output consistency. This happens server-side before the request is sent to Pollinations AI.</p>
+          <div class="docs-table-wrap">
+            <table class="docs-table">
+              <thead><tr><th>Input prompt</th><th>Sent to AI</th></tr></thead>
+              <tbody>
+                <tr><td>brick wall</td><td>brick wall, seamless texture, high quality, 4k, tileable</td></tr>
+                <tr><td>grass ground top view seamless</td><td>grass ground top view seamless (no duplication)</td></tr>
+                <tr><td>rusted metal</td><td>rusted metal, seamless texture, high quality, 4k, tileable</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="parameters" class="docs-section">
+          <h2>Model parameters</h2>
+          <div class="docs-table-wrap">
+            <table class="docs-table">
+              <thead><tr><th>Parameter</th><th>Default</th><th>Effect</th></tr></thead>
+              <tbody>
+                <tr><td>seed</td><td>42</td><td>Same seed + same prompt = identical texture. Change to get variation.</td></tr>
+                <tr><td>steps</td><td>30</td><td>Inference steps. Higher = better quality but slower. Range: 20–50.</td></tr>
+                <tr><td>guidance_scale</td><td>7.5</td><td>Fidelity to the prompt. Higher = closer to description. Range: 5–12.</td></tr>
+                <tr><td>resolucao</td><td>1024</td><td>Output resolution in pixels (square). 512 is faster, 1024 is recommended.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="performance" class="docs-section">
+          <h2>Performance benchmarks</h2>
+          <p>Measured across 9 real executions (3 per texture type) using the production Flask + Pollinations AI pipeline.</p>
+          <div class="docs-table-wrap">
+            <table class="docs-table">
+              <thead>
+                <tr><th>Texture</th><th>AI Generation</th><th>Post-processing</th><th>Total</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Stone wall</td><td>~0.69s avg</td><td>~0.14s avg</td><td><strong>~0.84s</strong></td></tr>
+                <tr><td>Wood texture</td><td>~0.69s avg</td><td>~0.13s avg</td><td><strong>~0.82s</strong></td></tr>
+                <tr><td>Grass top view</td><td>~0.72s avg</td><td>~0.15s avg</td><td><strong>~0.87s</strong></td></tr>
+                <tr><td colspan="3"><strong>Overall average</strong></td><td><strong>0.842s</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>SSIM quality scores</h3>
+          <p>Compared against real-world reference textures from <a href="https://polyhaven.com" target="_blank" rel="noopener" style="color:var(--accent);">Polyhaven</a> (CC0 license).</p>
+          <div class="docs-table-wrap">
+            <table class="docs-table">
+              <thead><tr><th>Texture</th><th>SSIM</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Wood planks</td><td><strong>0.649</strong> — Good</td><td>Parallel plank structure reproduced faithfully</td></tr>
+                <tr><td>Grass ground</td><td>0.173 — Low</td><td>AI generates more saturated green; reference has brown soil</td></tr>
+                <tr><td>Stone wall</td><td>0.025 — Low</td><td>AI generates lighter stone; reference is dark grey</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="docs-callout" style="margin-top:16px;">
+            <div class="docs-callout-icon">ℹ</div>
+            <div>A low SSIM score doesn't mean poor quality — it reflects stylistic differences between AI-generated textures and photographic references. AI textures are more saturated and vivid, which is often desirable for games and prototypes.</div>
+          </div>
+        </section>
+
+        <section id="faq" class="docs-section">
+          <h2>FAQ</h2>
+          <div class="docs-faq">
+            <details class="faq-item">
+              <summary>Do I need a GPU?</summary>
+              <p>No. RenderAI uses the Pollinations AI cloud API for texture generation — no local GPU is required. Any modern computer can run it.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Why did the original Hugging Face API get replaced?</summary>
+              <p>The Hugging Face free tier had significant response time variability (10–60 seconds) and endpoint instability. Pollinations AI provides free, no-quota access with average latency under 1 second.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Can I use the same texture repeatedly?</summary>
+              <p>Yes — use the same <strong>seed</strong> value and prompt. The same seed + prompt always produces the same texture, making generation reproducible.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Why does my grass texture look like a landscape?</summary>
+              <p>Add "top view" to your prompt: <code>"grass ground top view seamless"</code>. Vague prompts like "grass field" may generate a scene with sky and horizon.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Can I use RenderAI in a commercial project?</summary>
+              <p>RenderAI itself is an academic project (UTAD, 2026). Textures generated via Pollinations AI are subject to their terms of service. Always verify licensing for production use.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Does it work offline?</summary>
+              <p>No. Texture generation requires an internet connection to reach the Pollinations AI API. The Flask server and Unity rendering work locally.</p>
+            </details>
+          </div>
+        </section>
+
+        <section id="changelog" class="docs-section">
+          <h2>Changelog</h2>
+          <div class="docs-callout" style="border-color: rgba(124,109,250,0.3); background: rgba(124,109,250,0.05);">
+            <div class="docs-callout-icon">🏷</div>
+            <div>
+              <strong>Marco 4 — May 2026</strong><br/>
+              Added SSIM quality benchmarks, latency measurement system, and comprehensive error logging. 9-run performance suite completed.
+            </div>
+          </div>
+          <div class="docs-callout" style="border-color: rgba(74,222,128,0.2); background: rgba(74,222,128,0.04); margin-top: 12px;">
+            <div class="docs-callout-icon" style="color:#4ade80;">🏷</div>
+            <div>
+              <strong>Marco 3 — April 2026</strong><br/>
+              Migrated from Hugging Face to Pollinations AI. Latency dropped from 10–60s to &lt;1s. Added TextureWrapMode.Repeat, FilterMode.Bilinear, and async loading flag.
+            </div>
+          </div>
+          <div class="docs-callout" style="margin-top: 12px;">
+            <div class="docs-callout-icon">🏷</div>
+            <div>
+              <strong>Marco 2 — March 2026</strong><br/>
+              Added prompt preprocessing (auto-enrichment), seed/steps/guidance_scale parameter control, Inspector GUI, and LANCZOS image resampling.
+            </div>
+          </div>
+          <div class="docs-callout" style="margin-top: 12px;">
+            <div class="docs-callout-icon">🏷</div>
+            <div>
+              <strong>Marco 1 — March 2026</strong><br/>
+              Initial pipeline: Unity C# → Flask → Hugging Face (Stable Diffusion XL Base 1.0). First successful texture generation and application.
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    // Active docs nav link on scroll
+    const sections = document.querySelectorAll('.docs-section');
+    const navLinks = document.querySelectorAll('.docs-nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+      });
+    });
+
+    function copyCode(btn, text) {
+      navigator.clipboard.writeText(text || btn.closest('.docs-code-block').querySelector('code').textContent);
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    }
+  </script>
+</body>
+</html>
